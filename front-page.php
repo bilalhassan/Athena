@@ -11,8 +11,21 @@ get_header();
 <script>
     jQuery(document).ready(function($){
         
-        var height = jQuery(window).height();
-        athena_slider(); 
+        function get_height() {
+
+            if( jQuery( window ).width() < 601 ) {
+//                return 200;
+                return jQuery(window).height();
+            }else{
+                return jQuery(window).height();
+            }
+            
+
+        }
+        
+
+        athena_slider();
+        
         
 //        jQuery(window).resize( function () {
 //            var height = jQuery(window).height();
@@ -21,6 +34,9 @@ get_header();
         
         
         function athena_slider(){
+            
+            var height = get_height();
+            
             
             jQuery('#athena-slider').camera({
                 height: height + 'px',
@@ -53,7 +69,7 @@ get_header();
                     
                     <div class="overlay">
                         <div class="row">
-                            <div class="col-sm-6 parallax">
+                            <div class="col-sm-6 ">
                                 <h2 class="header-text reveal animated slideInUp">Welcome to Athena</h2>
                                 <a class="athena-button primary large animated slideInUp">View Features</a>
                                 <a class="athena-button default large animated slideInUp">Buy Now</a>                           
@@ -157,9 +173,11 @@ get_header();
             <?php /* Start the Loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
 
-                <div class="row">
+
                     <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-                </div>
+
+
+
                 
                 
             <?php endwhile; ?>

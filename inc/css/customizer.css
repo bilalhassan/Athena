@@ -48,7 +48,7 @@ and open the template in the editor.
 #customize-theme-controls .control-section.control-panel>h3.accordion-section-title:hover:after{
     border-left: none;
     border: none;
-    /*margin-top: -11px;*/
+    margin-top: -11px;
 }
 
 #customize-theme-controls .control-section>h3.accordion-section-title{
@@ -58,3 +58,6 @@ and open the template in the editor.
     background: #319DB5;
     color: #fff;
 }
+
+
+

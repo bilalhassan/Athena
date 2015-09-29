@@ -49,6 +49,11 @@ body.admin-bar{
     padding-top: 30px;
 }
 
+#main.athena-blog{
+    margin-top: 85px;
+    padding-top: 30px;
+}
+
 #main.athena-page .entry-content .entry-title{
     margin-top: 0;
 }
@@ -554,6 +559,12 @@ ul.athena-nav > li.menu-item.menu-item-has-children > a:after{
     text-align: center;
     color: #fff;
     font-size: 46px;
+}
+
+/*-- 8. Blog --*/
+
+#main.athena-blog .wp-post-image{
+    width: 100%;
 }
 
 /* calendar widget */

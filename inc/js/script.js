@@ -53,14 +53,26 @@ jQuery(document).ready(function ($) {
 
     // Parallax
     $(window).scroll(function () {
+        
         var s = $(window).scrollTop();
-        //var s = $('.parallax').css('background-position-y');
-
-        //$('.parallax').css('background-position-y(' + (s*.5) + 'px)');
-//        console.log( s ); 
+        
         $('.parallax').css({ top: (s / -4) });
-//        $('#athena-featured').css({ top: (s / -4) });
-        $('.parallax-image').css('background-position', '0 ' + (s / -4) + 'px');
+        $('.cameraSlide').css({ top: (s / 2) });
+        
+        $('.parallax-image').each( function(){
+            
+//            alert( ( $(this).offset().top - $(window).scrollTop() ) );
+            
+            var d = $(this).offset().top - $(window).scrollTop();
+            
+            if( d <= $(window).height() ) {
+                $(this).css('background-position', '0 ' + (s / -4) + 'px');
+            }
+            
+        });
+        
+
+        
     })
 
     // ------------
