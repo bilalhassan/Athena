@@ -1,0 +1,50 @@
+/* 
+    Created on : Sep 26, 2015, 11:24:49 PM
+    Author     : Bilal
+*/
+
+a,a:visited{
+    color: #36B3A8;
+}
+
+a:hover,
+a:focus,
+.site-info a:hover{
+    color: #17987F;
+}
+
+ul.athena-nav > li.menu-item.current-menu-item a,
+ul.athena-nav > li.menu-item.current-menu-parent a,
+ul.athena-nav > li.menu-item a:hover{
+    
+    border-bottom: 2px solid #36B3A8;
+
+}
+
+.athena-button.primary{
+    background: #36B3A8;
+}
+
+.athena-button.primary:hover{
+    background: #17987F;
+}
+
+#athena-featured{
+    background: #36B3A8;
+    color: #fff;
+}
+#athena-featured .fa{
+    color: #fff;
+}
+
+#authica-social a:hover{
+    color: #36B3A8;
+}
+
+.scroll-top:hover{
+    background: #36B3A8;
+}
+
+#athena-overlay-trigger{
+    border-color: transparent transparent #36B3A8 transparent;
+}
