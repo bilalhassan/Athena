@@ -25,7 +25,7 @@ function athena_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'athena' ),
+		esc_html_x( '%s', 'post date', 'athena' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
@@ -49,7 +49,7 @@ function athena_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'athena' ) );
 		if ( $categories_list && athena_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'athena' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links"><span class="fa fa-tags"></span> ' . esc_html__( '%1$s', 'athena' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
@@ -59,11 +59,11 @@ function athena_entry_footer() {
 		}
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'athena' ), esc_html__( '1 Comment', 'athena' ), esc_html__( '% Comments', 'athena' ) );
-		echo '</span>';
-	}
+//	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+//		echo '<span class="comments-link">';
+//		comments_popup_link( esc_html__( 'Leave a comment', 'athena' ), esc_html__( '1 Comment', 'athena' ), esc_html__( '% Comments', 'athena' ) );
+//		echo '</span>';
+//	}
 
 	edit_post_link(
 		sprintf(

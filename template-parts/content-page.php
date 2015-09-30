@@ -19,7 +19,7 @@
 <?php endif; ?>
 
 <div class="row">
-<div class="col-sm-<?php echo (!is_active_sidebar('sidebar-1') ) ? '12' : '9'; ?>">
+<div class="col-sm-<?php echo (!is_active_sidebar('sidebar-right') ) ? '12' : '9'; ?>">
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -60,7 +60,7 @@
 
     </article><!-- #post-## -->
 </div>
-<?php if (is_active_sidebar('sidebar-1')) : ?>
+<?php if (is_active_sidebar('sidebar-right')) : ?>
     <div class="col-sm-3" id="athena-sidebar">
         <?php get_sidebar(); ?>
     </div>

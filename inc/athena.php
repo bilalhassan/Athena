@@ -75,8 +75,28 @@ add_action( 'wp_enqueue_scripts', 'athena_scripts' );
 function athena_widgets_init() {
     
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'athena' ),
-		'id'            => 'sidebar-1',
+		'name'          => esc_html__( 'Right Sidebar', 'athena' ),
+		'id'            => 'sidebar-right',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+    
+	register_sidebar( array(
+		'name'          => esc_html__( 'Left Sidebar', 'athena' ),
+		'id'            => 'sidebar-left',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+    
+	register_sidebar( array(
+		'name'          => esc_html__( 'Shop Sidebar ( WooCommerce )', 'athena' ),
+		'id'            => 'sidebar-shop',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -96,7 +116,7 @@ function athena_widgets_init() {
 	) );
     
 	register_sidebar( array(
-		'name'          => esc_html__( 'Homepage Overlay', 'athena' ),
+		'name'          => esc_html__( 'Slider Overlay', 'athena' ),
 		'id'            => 'sidebar-overlay',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s col-sm-6">',

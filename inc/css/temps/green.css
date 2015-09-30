@@ -23,6 +23,7 @@ ul.athena-nav > li.menu-item a:hover{
 
 .athena-button.primary{
     background: #36B3A8;
+    color: #fff;
 }
 
 .athena-button.primary:hover{

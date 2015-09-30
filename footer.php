@@ -15,7 +15,7 @@
 <footer id="colophon" class="site-footer" role="contentinfo">
     
     
-    <div class="athena-footer parallax-image">
+    <div class="athena-footer" class="parallax-window" data-parallax="scroll" data-image-src="/wp-content/themes/athena/inc/images/footer.jpg">
         <div>
             <div class="row">
                 <?php get_sidebar('footer'); ?>

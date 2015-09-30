@@ -1,6 +1,8 @@
 jQuery( document ).ready( function( $ ){
 
-    $('#customize-info .preview-notice').html('Upgrade to Athena Pro <a class="button button-primary">Athena Pro</a>');
+//    $('#customize-header-actions').append('<a class="button button-primary">Upgrade to Pro</a>');
+
+    $('#customize-info .preview-notice').html('<a class="button button-primary">Upgrade to Athena Pro</a>');
 
 
     $( '#customize-control-theme_color input[type=radio]' ).each( function() {

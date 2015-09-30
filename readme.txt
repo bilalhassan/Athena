@@ -115,3 +115,8 @@ Athena includes support for Infinite Scroll in Jetpack.
     - URL                   http://www.google.com/fonts#UsePlace:use/Collection:Source+Sans+Pro
     - License               SIL Open Font
     - License URL           http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+
+15. Parallax.js
+    - URL                   https://github.com/pixelcog/parallax.js/
+    - License               SIL Open Font
+    - License URL           http://www.opensource.org/licenses/mit-license.php

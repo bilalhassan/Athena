@@ -34,15 +34,9 @@ function athena_customize_register( $wp_customize ) {
         'priority' => 10
     ) );
 
-    $wp_customize->add_section( 'title_tagline', array (
-        'title' => __( 'Site Title, Tagline & Favicon', 'athena' ),
-        'panel' => 'general',
-    ) );
 
-    $wp_customize->add_section( 'static_front_page', array (
-        'title' => __( 'Static Front Page', 'athena' ),
-        'panel' => 'general',
-    ) );
+
+
 
     // *********************************************
     // ****************** Homepage *****************
@@ -66,9 +60,20 @@ function athena_customize_register( $wp_customize ) {
 
     $wp_customize->add_section( 'homepage_overlay', array (
         'title'                 => __( 'Overlay', 'athena' ),
+        'description'           => __( 'The overlay appears after the user clicks the icon on the bottom-right of the slider', 'athena' ),
         'panel'                 => 'homepage',
     ) );
 
+    $wp_customize->add_section( 'static_front_page', array (
+        'title' => __( 'Static Front Page', 'athena' ),
+        'panel' => 'homepage',
+    ) );
+    
+    $wp_customize->add_section( 'title_tagline', array (
+        'title' => __( 'Site Title, Tagline & Favicon', 'athena' ),
+        'panel' => 'homepage',
+    ) );
+    
     $wp_customize->add_setting( 'overlay_bool', array (
         'default'               => 'on',
         'transport'             => 'postMessage',
@@ -221,8 +226,8 @@ function athena_customize_register( $wp_customize ) {
         'transport'             => 'postMessage',
     ) );
 
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control', array (
-        'label' =>              __( 'Featured Home Page Image', 'athena' ),
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control1', array (
+        'label' =>              __( 'Slide #1 Image', 'athena' ),
         'section'               => 'homepage_hero',
         'mime_type'             => 'image',
         'settings'              => 'featured_image1',
@@ -428,6 +433,34 @@ function athena_customize_register( $wp_customize ) {
         'choices'               => athena_font_sizes()
         
     ) );
+    
+    
+    // *********************************************
+    // ****************** Footer *****************
+    // *********************************************
+    $wp_customize->add_panel( 'footer', array (
+        'title'                 => __( 'Footer', 'athena' ),
+        'description'           => __( 'Customize the site footer', 'athena' ),
+        'priority'              => 10
+    ) );
+    
+    $wp_customize->add_section( 'footer_background', array (
+        'title'                 => __( 'Footer Background', 'athena' ),
+        'panel'                 => 'footer',
+    ) );
+    
+    $wp_customize->add_setting( 'footer_background_image', array (
+        'default'               => '',
+        'transport'             => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control3', array (
+        'label' =>              __( 'Footer Background Image ( Parallax )', 'athena' ),
+        'section'               => 'footer_background',
+        'mime_type'             => 'image',
+        'settings'              => 'footer_background_image',
+        'description'           => __( 'Select the image file that you would like to use as the footer background', 'athena' ),        
+    ) ) );
     
    
     

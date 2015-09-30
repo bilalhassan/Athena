@@ -16,6 +16,7 @@ body{
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     font-weight: 400;
+    color: #4D5051;
 }
 
 body.admin-bar{
@@ -105,18 +106,18 @@ ul li{
     z-index: 9999;
 }
 
-#athena-header-sticky-wrapper.is-sticky #athena-header .header-inner{
+#athena-header.frontpage.sticky .header-inner{
     height: 50px;
     background: #1b1b1b;
 }
 
-#athena-header-sticky-wrapper.is-sticky #athena-header .header-inner .site-title{
+#athena-header.sticky .header-inner .site-title{
     font-size: 28px;
     line-height: 50px;
     margin: 0;
 }
 
-#athena-header-sticky-wrapper.is-sticky #athena-header .header-inner .site-description{
+#athena-header.sticky .site-description{
     display: none;
 }
 
@@ -125,7 +126,7 @@ ul li{
 }
 
 #athena-header.frontpage{
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
@@ -436,8 +437,6 @@ ul.athena-nav > li.menu-item.menu-item-has-children > a:after{
 /*-- 5. Footer --*/
 .athena-footer{
     
-
-    background-image: url('../images/footer.jpg');
     background-repeat-x: no-repeat;
     background-repeat-y: repeat;
     background-size: cover;
@@ -563,8 +562,25 @@ ul.athena-nav > li.menu-item.menu-item-has-children > a:after{
 
 /*-- 8. Blog --*/
 
-#main.athena-blog .wp-post-image{
+#main.athena-blog .wp-post-image,
+.homepage-page-content .post .wp-post-image{
     width: 100%;
+}
+
+.homepage-page-content .post .entry-title{
+    display: block;
+}
+
+#main.athena-blog .entry-title{
+    margin: 8px 0;
+}
+
+#main.athena-blog .entry-meta .meta-detail{
+    text-align: left;
+}
+
+#main.athena-blog .entry-meta .meta-detail > span{
+    margin-right: 12px;
 }
 
 /* calendar widget */
