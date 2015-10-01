@@ -21,7 +21,10 @@ ul.athena-nav > li.menu-item a:hover{
 
 }
 
-.athena-button.primary{
+.athena-button.primary,
+button, 
+input[type="button"], 
+input[type="submit"]{
     background: #36B3A8;
     color: #fff;
 }

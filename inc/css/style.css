@@ -121,9 +121,7 @@ ul li{
     display: none;
 }
 
-#athena-header-sticky-wrapper.is-sticky #athena-search{
-    margin-top: 5px;
-}
+
 
 #athena-header.frontpage{
     position: fixed;
@@ -173,7 +171,23 @@ ul li{
 }
 
 #athena-search{
-    margin-top: 25px;
+    background: #111111;
+    background: rgba( 50, 50, 50, 0.9 );
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30%;
+}
+
+#athena-search .search-field{
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 22px;
 }
 
 #athena-search .search-form{
@@ -182,6 +196,10 @@ ul li{
 
 #athena-search .fa.fa-close{
     color: #fff;
+    cursor: pointer;
+    font-weight: 100;
+    font-size: 32px;
+    
 }
 
 #athena-search input[type="search"]{
@@ -196,6 +214,12 @@ ul li{
 
 
 /*-- 2. Navigation --*/
+
+#athena-header .slicknav_menu{
+    float: right;
+    background: #1B1B1B;
+    display: none;
+}
 
 ul.athena-nav ul {
     box-shadow: none;
@@ -402,7 +426,11 @@ ul.athena-nav > li.menu-item.menu-item-has-children > a:after{
 }
 
 /*-- 4. Buttons --*/
-.athena-button{
+.athena-button,
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"]{
     padding: 10px;
     color: #fff;
     background: #C8C8C8;
@@ -617,7 +645,27 @@ ul.athena-nav > li.menu-item.menu-item-has-children > a:after{
     
 }
 
-@media( max-width: 980px ) {
+@media( max-width: 991px ) {
+    
+    #athena-header .slicknav_menu{
+        display: block;
+    }
+    
+    #athena-header .header-inner,
+    #athena-header.frontpage .header-inner{
+        background: #1b1b1b;
+        height: 50px;
+    }
+    
+    #athena-header .header-inner .site-title{
+        font-size: 28px;
+        line-height: 50px;
+        margin: 0;
+    }
+    
+    .site-description{
+        display: none;
+    }
     
     #mobile-nav{
         display: block;
@@ -628,11 +676,11 @@ ul.athena-nav > li.menu-item.menu-item-has-children > a:after{
     }
     
     .site-branding{
-        text-align: right;
+        float: left;
     }
 }
 
-@media( min-width: 981px ) {
+@media( min-width: 992px ) {
     
     
     

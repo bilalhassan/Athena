@@ -8,8 +8,8 @@
  */
 ?>
 
-<?php if( get_post_thumbnail_id( $post->ID ) ) : ?>
-    <div id="athena-page-jumbotron" class="parallax-image" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) ?>)">
+<?php if (get_post_thumbnail_id($post->ID)) : ?>
+    <div id="athena-page-jumbotron" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)) ?>">
 
         <header class="entry-header">
             <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
@@ -19,20 +19,20 @@
 <?php endif; ?>
 
 <div class="row">
-<div class="col-sm-<?php echo (!is_active_sidebar('sidebar-right') ) ? '12' : '9'; ?>">
+    <div class="col-sm-<?php echo (!is_active_sidebar('sidebar-right') ) ? '12' : '9'; ?>">
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        
+
 
             <div class="entry-content">
-                
-                <?php if( !get_post_thumbnail_id( $post->ID ) ) : ?>
+
+                <?php if (!get_post_thumbnail_id($post->ID)) : ?>
 
                     <header class="entry-header">
                         <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
                     </header><!-- .entry-header -->
-                
+
                 <?php endif; ?>
 
 
@@ -55,16 +55,16 @@
                 );
                 ?>
             </footer><!-- .entry-footer -->
-        
 
 
-    </article><!-- #post-## -->
+
+        </article><!-- #post-## -->
+    </div>
+    <?php if (is_active_sidebar('sidebar-right')) : ?>
+        <div class="col-sm-3" id="athena-sidebar">
+            <?php get_sidebar(); ?>
+        </div>
+    <?php endif; ?>
+
 </div>
-<?php if (is_active_sidebar('sidebar-right')) : ?>
-    <div class="col-sm-3" id="athena-sidebar">
-        <?php get_sidebar(); ?>
-    </div>
-<?php endif; ?>
-
-    </div>
 

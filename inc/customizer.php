@@ -290,6 +290,11 @@ function athena_customize_register( $wp_customize ) {
         'priority'              => 10
     ) );
     
+    $wp_customize->add_section( 'logo', array (
+        'title'                 => __( 'Logo', 'athena' ),
+        'panel'                 => 'appearance',
+    ) );
+    
     $wp_customize->add_section( 'color', array (
         'title'                 => __( 'Colors', 'athena' ),
         'panel'                 => 'appearance',
@@ -301,9 +306,24 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_section( 'templates', array (
-        'title'                 => __( 'Layouts', 'athena' ),
+        'title'                 => __( 'Sidebars', 'athena' ),
         'panel'                 => 'appearance',
     ) );
+    
+    // 1st slide
+    $wp_customize->add_setting( 'logo', array (
+        'default'               => '',
+        'transport'             => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control4', array (
+        'label' =>              __( 'Logo', 'athena' ),
+        'section'               => 'logo',
+        'mime_type'             => 'image',
+        'settings'              => 'logo',
+        'description'           => __( 'Image for your site', 'athena' ),        
+    ) ) );
+    
     
     $wp_customize->add_setting( 'sidebar_location', array (
         'default'               => 'right',
@@ -316,8 +336,10 @@ function athena_customize_register( $wp_customize ) {
         'label'                 => __( 'Sidebar Location', 'athena' ),
         'description'           => __( 'Do you want the sidebar to be on the left or the right side ?', '' ),
         'choices'               => array(
+            'none'              => __( 'No Sidebar', 'athena'),
             'right'             => __( 'Right', 'athena'),
-            'left'              => __( 'Left', 'athena')
+            'left'              => __( 'Left', 'athena'),
+            'both'              => __( 'Left + Right', 'athena'),
         )
     ) );
     
@@ -421,8 +443,21 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     
+    $wp_customize->add_setting( 'menu_font_size', array (
+        'default'               => '14px',
+        'transport'             => 'postMessage',
+    ) );
+    
+    $wp_customize->add_control( 'menu_font_size', array(
+        'type'                  => 'select',
+        'section'               => 'font',
+        'label'                 => __( 'Menu Font Size', 'athena' ),
+        'choices'               => athena_font_sizes()
+        
+    ) );
+    
     $wp_customize->add_setting( 'theme_font_size', array (
-        'default'               => 'green',
+        'default'               => '14px',
         'transport'             => 'postMessage',
     ) );
     
@@ -462,6 +497,22 @@ function athena_customize_register( $wp_customize ) {
         'description'           => __( 'Select the image file that you would like to use as the footer background', 'athena' ),        
     ) ) );
     
+    $wp_customize->add_section( 'footer_text', array (
+        'title'                 => __( 'Copyright Text', 'athena' ),
+        'panel'                 => 'footer',
+    ) );
+    
+    $wp_customize->add_setting( 'copyright_text', array (
+        'default'               => __( 'Copyright Company Name' ) . date( 'Y' ),
+        'transport'             => 'postMessage',
+    ) );
+    
+    $wp_customize->add_control( 'copyright_text', array(
+        'type'                  => 'text',
+        'section'               => 'footer_text',
+        'label'                 => __( 'Copyright Text', 'athena' )
+        
+    ) );
    
     
 }
@@ -501,25 +552,25 @@ function athena_icons(){
 function athena_fonts(){
     
     $font_family_array = array(
-        'Arial, Helvetica, sans-serif' => 'Arial',
-        'Arial Black, Gadget, sans-serif' => 'Arial Black',
-        'Courier New, monospace' => 'Courier New',
-        'Lobster, cursive' => 'Lobster - Cursive',
-        'Georgia, serif' => 'Georgia',
-        'Impact, Charcoal, sans-serif' => 'Impact',
-        'Josefin Sans, sans-serif' => 'Josefin',
-        'Lucida Console, Monaco, monospace' => 'Lucida Console',
+        'Arial, Helvetica, sans-serif'          => 'Arial',
+        'Arial Black, Gadget, sans-serif'       => 'Arial Black',
+        'Courier New, monospace'                => 'Courier New',
+        'Lobster, cursive'                      => 'Lobster - Cursive',
+        'Georgia, serif'                        => 'Georgia',
+        'Impact, Charcoal, sans-serif'          => 'Impact',
+        'Josefin Sans, sans-serif'              => 'Josefin',
+        'Lucida Console, Monaco, monospace'     => 'Lucida Console',
         'Lucida Sans Unicode, Lucida Grande, sans-serif' => 'Lucida Sans Unicode',
-        'MS Sans Serif, Geneva, sans-serif' => 'MS Sans Serif',
-        'MS Serif, New York, serif' => 'MS Serif',
-        'Open Sans, sans-serif' => 'Open Sans',
+        'MS Sans Serif, Geneva, sans-serif'     => 'MS Sans Serif',
+        'MS Serif, New York, serif'             => 'MS Serif',
+        'Open Sans, sans-serif'                 => 'Open Sans',
         'Palatino Linotype, Book Antiqua, Palatino, serif' => 'Palatino Linotype',
-        'Source Sans Pro, sans-serif' => 'Source Sans Pro',
-        'Lato, sans-serif' => 'Lato',
-        'Tahoma, Geneva, sans-serif' => 'Tahoma',
-        'Times New Roman, Times, serif' => 'Times New Roman',
-        'Trebuchet MS, sans-serif' => 'Trebuchet MS',
-        'Verdana, Geneva, sans-serif' => 'Verdana',
+        'Source Sans Pro, sans-serif'           => 'Source Sans Pro',
+        'Lato, sans-serif'                      => 'Lato',
+        'Tahoma, Geneva, sans-serif'            => 'Tahoma',
+        'Times New Roman, Times, serif'         => 'Times New Roman',
+        'Trebuchet MS, sans-serif'              => 'Trebuchet MS',
+        'Verdana, Geneva, sans-serif'           => 'Verdana',
     );
     
     return $font_family_array;
@@ -533,6 +584,7 @@ function athena_font_sizes(){
         '14px' => '14 px',
         '16px' => '16 px',
         '18px' => '18 px',
+        '20px' => '20 px',
     );
     
     return $font_size_array;

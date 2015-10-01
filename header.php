@@ -20,6 +20,23 @@
     </head>
 
     <body <?php body_class(); ?>>
+        
+        <div id="athena-search" class="noshow">
+            
+            <div class="row">
+                
+                <span class="fa fa-search"></span>
+                
+                <?php get_search_form( ); ?>
+                
+                <span class="fa fa-close"></span>
+       
+                
+                
+            </div>
+            
+        </div>
+        
         <div id="page" class="hfeed site">
 
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'athena'); ?></a>
@@ -32,7 +49,7 @@
 
                         <div class="row">
 
-                            <div class="col-sm-6">
+                            <div class="col-md-6 athena-branding">
 
                                 <div class="site-branding">
                                     <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
@@ -41,12 +58,12 @@
 
                             </div>
 
-                            <div class="col-sm-6 text-right">
+                            <div class="col-md-6 text-right">
 
 
 
                                 <nav id="site-navigation" class="main-navigation" role="navigation">
-                                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'athena'); ?></button>
+                                    <!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'athena'); ?></button>-->
                                     <?php
                                     $menu = wp_nav_menu(array(
                                         'theme_location' => 'primary',
@@ -57,13 +74,6 @@
 
 
                                 </nav><!-- #site-navigation -->
-                                 
-                                <div id="athena-search" class="noshow">
-                                    <span class="fa fa-close"></span>
-                                    <?php get_search_form( ); ?>
-                                </div>
-                                
-
 
                             </div>
 

@@ -1,10 +1,20 @@
 jQuery(document).ready(function ($) {
 
+    $('#primary-menu').slicknav({
+        prependTo : $('#athena-header .athena-branding'),
+        label     : ''
+    });
 
-    $('.fa-search, #athena-search .fa.fa-close').click( function () {
+    $('.athena-search, #athena-search .fa.fa-close').click( function () {
         
-       $('#athena-search').toggleClass('noshow'); 
-       $('#site-navigation').toggleClass('noshow'); 
+        $('#athena-search').fadeToggle( 449 )
+        
+//       $('#athena-search').fadeIn( 200, function() {
+          
+          
+           
+//       });
+//       $('#site-navigation').toggleClass('noshow'); 
         
     });
 
