@@ -1,5 +1,8 @@
 jQuery(document).ready(function ($) {
 
+
+
+
     $('#primary-menu').slicknav({
         prependTo : $('#athena-header .athena-branding'),
         label     : ''
@@ -8,13 +11,6 @@ jQuery(document).ready(function ($) {
     $('.athena-search, #athena-search .fa.fa-close').click( function () {
         
         $('#athena-search').fadeToggle( 449 )
-        
-//       $('#athena-search').fadeIn( 200, function() {
-          
-          
-           
-//       });
-//       $('#site-navigation').toggleClass('noshow'); 
         
     });
 
@@ -50,6 +46,9 @@ jQuery(document).ready(function ($) {
         
         var s = $(window).scrollTop();
         
+        $('.parallax').css({ top: (s / 3.) });
+//        $('.cameraSlide').css({ top: (s / 1.) });
+        
         if( s > $(window).height() ) {
             
             $('#athena-header.frontpage').addClass('sticky animated slideInDown');
@@ -61,7 +60,7 @@ jQuery(document).ready(function ($) {
         
         
 //        $('.parallax').css({ top: (s / -4) });
-        $('.cameraSlide').css({ top: (s / 1.2) });
+        
 //        
 //        $('.parallax-image').each( function(){
 //            
@@ -86,6 +85,8 @@ jQuery(document).ready(function ($) {
 
     athenaWow.init();
 });
+
+
 
 
 /*!

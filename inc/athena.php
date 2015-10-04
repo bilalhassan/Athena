@@ -200,10 +200,7 @@ function athena_homepage_script() { ?>
 
 add_action('wp_head', 'athena_homepage_script');
 
-function athena_homepage() {
-    ?>
-
-
+function athena_homepage() { ?>
 
     <div id="athena-jumbotron">
 
@@ -213,7 +210,8 @@ function athena_homepage() {
 
                 <div class="overlay">
                     <div class="row">
-                        <div class="col-sm-6 ">
+                        
+                        <div class="col-sm-6 parallax">
                             <h2 class="header-text reveal animated slideInUp">Welcome to Athena</h2>
                             <a class="athena-button primary large animated slideInUp">View Features</a>
                             <a class="athena-button default large animated slideInUp">Buy Now</a>                           
