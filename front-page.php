@@ -13,7 +13,8 @@ get_header();
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-        <?php athena_homepage(); ?>
+        <?php do_action( 'athena_homepage' ); ?>
+        
         <div class="homepage-page-content col-sm-<?php echo (!is_active_sidebar('sidebar-right') ) ? '12' : '8'; ?>">
             <?php if (have_posts()) : ?>
 

@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
 
 
     $('#primary-menu').slicknav({
-        prependTo : $('#athena-header .athena-branding'),
+        prependTo : $('.athena-header-menu'),
         label     : ''
     });
 
@@ -37,6 +37,17 @@ jQuery(document).ready(function ($) {
     $('.scroll-top').click(function() {
         $("html, body").animate({scrollTop: 0}, 1000 );
         return false;
+    });
+
+    // scroll to top trigger
+    $('.scroll-down').click(function() {
+        
+        $("html, body").animate({ 
+            scrollTop: ( $(window).height() - 85 )
+        }, 1000 );
+        
+        return false;
+        
     });
 
     
@@ -79,7 +90,8 @@ jQuery(document).ready(function ($) {
     // ------------
     var athenaWow = new WOW({
         boxClass: 'reveal',
-        animateClass: 'animated'
+        animateClass: 'animated',
+        offset : 150
 
     });
 

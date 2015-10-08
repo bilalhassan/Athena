@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 5, 2015, 10:58:37 AM
+    Author     : Bilal
+*/
+
+
+a,a:visited{
+    color: #E74C3C;
+}
+
+a:hover,
+a:focus,
+.site-info a:hover{
+    color: #C0392B;
+}
+
+ul.athena-nav > li.menu-item.current-menu-item a,
+ul.athena-nav > li.menu-item.current-menu-parent a,
+ul.athena-nav > li.menu-item a:hover{
+    
+    border-bottom: 2px solid #E74C3C;
+
+}
+
+.athena-button.primary,
+button, 
+input[type="button"], 
+input[type="submit"]{
+    background: #E74C3C;
+    color: #fff;
+}
+
+.athena-button.primary:hover{
+    background: #C0392B;
+}
+
+#athena-featured{
+    background: #E74C3C;
+    color: #fff;
+}
+#athena-featured .fa{
+    color: #fff;
+}
+
+#authica-social a:hover{
+    color: #E74C3C;
+}
+
+.scroll-top:hover{
+    background: #E74C3C;
+}
+
+#athena-overlay-trigger{
+    border-color: transparent transparent #E74C3C transparent;
+}

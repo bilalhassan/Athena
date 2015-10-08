@@ -49,32 +49,63 @@
 
                         <div class="row">
 
-                            <div class="col-md-6 athena-branding">
+                            <div class="athena-branding">
 
                                 <div class="site-branding">
-                                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                                    <p class="site-description"><?php bloginfo('description'); ?></p>
+                                    
+                                    <div id="athena-logo" class="<?php echo get_theme_mod('logo_bool', 'off' ) == 'on' ? 'show' : 'hidden'; ?>">
+                                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                                            <img src="<?php echo get_theme_mod( 'logo' ) ?>" title="<?php bloginfo('name'); ?>" />
+                                        </a>
+                                    </div>
+                                        <h1 class="site-title <?php echo get_theme_mod('logo_bool', 'off' ) == 'off' ? 'show' : 'hidden'; ?>">
+                                            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+                                        </h1>
+
+                                        <p class="site-description <?php echo get_theme_mod('logo_bool', 'off' ) == 'off' ? 'show' : 'hidden'; ?>">
+                                            <?php bloginfo('description'); ?>
+                                        </p>
+                                        
+                                    <?php //endif; ?>
+                                    
                                 </div><!-- .site-branding -->
 
                             </div>
 
-                            <div class="col-md-6 text-right">
+                            <div class="athena-header-menu">
 
+                                <div class="athena-mobile-cart">
+                                    
+                                    <a class="athena-cart" href="<?php echo WC()->cart->get_cart_url() ; ?>"><span class="fa fa-shopping-cart"></span> <?php echo WC()->cart->get_cart_total(); ?></a>
+    
+                                    
 
-
+                                </div>
+                                
                                 <nav id="site-navigation" class="main-navigation" role="navigation">
                                     <!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'athena'); ?></button>-->
                                     <?php
-                                    $menu = wp_nav_menu(array(
-                                        'theme_location' => 'primary',
-                                        'menu_id' => 'primary-menu',
-                                        'menu_class' => 'athena-nav',
-                                            ));
+                                    
+                                    if( has_nav_menu( 'primary' ) ) :
+                                        
+                                        $menu = wp_nav_menu(array(
+                                            'theme_location' => 'primary',
+                                            'menu_id' => 'primary-menu',
+                                            'menu_class' => 'athena-nav',
+                                        ));
+                                    else :
+                                        
+                                        echo '<div id="athena-add-menu"><a class="athena-cart" href="' . admin_url( 'nav-menus.php' ) . '">' . __( 'Add a Primary Menu' ) . '</a></div>';
+                                    
+                                    endif;
+                                    
+
                                     ?>
 
 
                                 </nav><!-- #site-navigation -->
 
+                                
                             </div>
 
                         </div>
