@@ -25,9 +25,21 @@
             <header class="entry-header">
                 <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
 
-                <div class="entry-meta">
-                    <?php athena_posted_on(); ?>
-                </div><!-- .entry-meta -->
+            <div class="entry-meta">
+                <div class="meta-detail">
+
+                    <span><span class="fa fa-calendar"></span> <?php echo athena_posted_on(); ?></span>
+
+                    <span class="author"><?php echo get_the_author() ? '<span class="fa fa-user"></span> ' . get_the_author() : ' '; ?></span>
+
+                    <span><?php echo get_comments_number() == 0 ? '<span class="fa fa-comment"></span> ' . __('No comments yet', 'athena') : get_comments_number() . ' Comments'; ?></span>
+
+                    <span><?php athena_entry_footer(); ?></span>
+
+                </div>
+
+            </div><!-- .entry-meta -->
+            
             </header><!-- .entry-header -->
 
             <div class="entry-content">
@@ -43,6 +55,16 @@
             <footer class="entry-footer">
                 <?php athena_entry_footer(); ?>
             </footer><!-- .entry-footer -->
+            
+            <?php the_post_navigation(); ?>
+
+            <?php
+            // If comments are open or we have at least one comment, load up the comment template.
+            if (comments_open() || get_comments_number()) :
+                comments_template();
+            endif;
+            ?>
+            
         </article><!-- #post-## -->
 
     </div>

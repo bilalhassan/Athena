@@ -59,6 +59,11 @@
 			$( '.slide1-header' ).text( to );
 		} );
 	} );
+	wp.customize( 'featured_image2_title', function( value ) {
+		value.bind( function( to ) {
+			$( '.slide2-header' ).text( to );
+		} );
+	} );
 	wp.customize( 'slide1_button1_text', function( value ) {
 		value.bind( function( to ) {
                     console.log(value);
@@ -195,6 +200,13 @@
                         $('#athena-logo').addClass('hidden');
                         $('.site-title, .site-description').removeClass('hidden');                        
                     }
+                    
+		} );
+	} );
+	wp.customize( 'logo', function( value ) {
+		value.bind( function( to ) {
+
+                    $('#athena-logo img').attr('src', to );
                     
 		} );
 	} );

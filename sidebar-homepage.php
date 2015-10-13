@@ -5,6 +5,6 @@ if ( ! is_active_sidebar( 'sidebar-homepage' ) ) {
 }
 ?>
 
-<div id="athena-overlay" class="widget-area">
+<div class="widget-area">
 	<?php dynamic_sidebar( 'sidebar-homepage' ); ?>
 </div>

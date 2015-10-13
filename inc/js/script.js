@@ -1,5 +1,58 @@
 jQuery(document).ready(function ($) {
 
+    $('#athena-featured .featured-box').click( function () {
+        
+        window.location.replace( $(this).attr( 'data-target' ) );
+        
+    });
+
+
+    $('.featured-box').hover( function () {
+        
+        $('.athena-icon', this ).stop(true, false).animate({
+            
+            top: '-7px'
+            
+        }, 300 );
+        $('.athena-desc', this ).stop(true, false).animate({
+            
+            top: '7px'
+            
+        }, 300 );
+        
+        $( '.athena-title', this ).stop(true, false).animate({
+            
+            'letter-spacing': '1.5px'
+            
+        }, 300 );
+        
+    }, function () {
+        $('.athena-icon', this ).stop(true, false).animate({
+            
+            top: '0px'
+            
+        }, 300 );
+        $('.athena-desc', this ).stop(true, false).animate({
+            
+            top: '0px'
+            
+        }, 300 );
+        $( '.athena-title', this ).stop(true, false).animate({
+            
+            'letter-spacing': '1px'
+            
+        }, 300 );
+    });
+
+
+    $('.athena-blog-content').imagesLoaded( function(){
+        $('.athena-blog-content').masonry({
+            itemSelector: '.athena-blog-post',
+            gutter: 0,
+            transitionDuration : 0,
+        }).masonry('reloadItems');        
+    });
+
 
 
 

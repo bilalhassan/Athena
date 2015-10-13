@@ -70,7 +70,7 @@ add_action('wp_enqueue_scripts', 'athena_scripts');
 function athena_widgets_init() {
 
     register_sidebar(array(
-        'name' => esc_html__('Right Sidebar', 'athena'),
+        'name' => esc_html__('Sidebar', 'athena'),
         'id' => 'sidebar-right',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -132,6 +132,85 @@ function athena_widgets_init() {
 }
 
 add_action('widgets_init', 'athena_widgets_init');
+
+
+
+function athena_do_left_sidebar( $args ) {
+    
+    if( get_theme_mod( 'sidebar_location', 'right' ) == 'none' ) :
+        return;
+    endif;
+    
+    if( $args[0] == 'frontpage' && get_theme_mod('home_sidebar') == 'off' )
+        return;
+    
+    if( $args[0] == 'page' && get_theme_mod('page_sidebar') == 'off' )
+        return;
+    
+    if( $args[0] == 'single' && get_theme_mod('single_sidebar') == 'off' )
+        return;
+    
+    
+    
+    if( get_theme_mod( 'sidebar_location', 'right' ) == 'left' ) :
+        
+        echo '<div class="col-sm-4" id="athena-sidebar">' .
+        get_sidebar() . '</div>';
+        
+    endif;
+    
+    
+}
+add_action('athena-sidebar-left', 'athena_do_left_sidebar');
+
+function athena_do_right_sidebar( $args ) {
+    
+    if( get_theme_mod( 'sidebar_location', 'right' ) == 'none' ) :
+        return;
+    endif;
+    
+    if( $args[0] == 'frontpage' && get_theme_mod('home_sidebar') == 'off' )
+        return;
+    
+    if( $args[0] == 'page' && get_theme_mod('page_sidebar') == 'off' )
+        return;
+    
+    if( $args[0] == 'single' && get_theme_mod('single_sidebar') == 'off' )
+        return;
+    
+    
+    
+    if( get_theme_mod( 'sidebar_location', 'right' ) == 'right' ) :
+        
+        echo '<div class="col-sm-4" id="athena-sidebar">';
+    
+        get_sidebar();
+        
+        echo '</div>';
+        
+    endif;
+    
+    
+}
+add_action('athena-sidebar-right', 'athena_do_right_sidebar');
+
+function athena_main_width(){
+    
+    $width = 12;
+    
+    if( get_theme_mod( 'sidebar_location', 'right' ) == 'none' ) :
+        
+        $width = 12;
+    
+    else :
+        
+        $width = 8;
+        
+    endif;
+    
+    return $width;
+}
+
 
 function athena_get_image() {
 
@@ -302,7 +381,7 @@ function athena_render_homepage() { ?>
 
         <div class="slider-bottom">
             <div>
-                <span class="fa fa-chevron-down scroll-down reveal animated slideInUp delay-long"></span>
+                <span class="fa fa-chevron-down scroll-down animated slideInUp delay-long"></span>
             </div>
         </div>
         
@@ -376,3 +455,102 @@ function athena_render_homepage() { ?>
 }
 
 add_action( 'athena_homepage', 'athena_render_homepage' );
+
+
+
+class athena_recent_posts_widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+                'athena_recent_posts_widget', __('Athena Recent Articles', 'athena'), array('description' => __('Use this widget to display the Athena Recent Posts.', 'athena'),)
+        );
+    }
+
+    // Creating widget front-end
+    // This is where the action happens
+    public function widget($args, $instance) {
+        
+        if( isset( $instance['title'] ) ) :
+            $title = apply_filters('widget_title', $instance['title'] );
+        else : 
+            $title = '';
+        endif;
+        
+
+        // before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+        if (!empty($title))
+            echo $args['before_title'] . $title . $args['after_title'];
+        
+        echo athena_recent_posts();
+
+    }
+
+    // Widget Backend
+    public function form($instance) {
+        if (isset($instance['title'])) {
+            $title = $instance['title'];
+        } else {
+            $title = __('Recent Articles', 'athena');
+        }
+        // Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'athena'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />             
+        </p>
+        <?php
+    }
+
+    // Updating widget replacing old instances with new
+    public function update($new_instance, $old_instance) {
+        $instance = array();
+        $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
+        return $instance;
+    }
+
+}
+
+add_action('widgets_init', 'athena_load_widget');
+function athena_load_widget() {
+    register_widget('athena_recent_posts_widget');
+}
+
+function athena_recent_posts() {
+    $args = array(
+        'numberposts' => '6',
+        'post_status' => 'publish',
+    );
+    ?>
+    <div id="athena_recent_posts">
+        <?php $recent_posts = wp_get_recent_posts($args);
+        foreach ($recent_posts as $post) { ?>
+            <div class="col-sm-4 athena-single-post">
+                <div>
+                    <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post['ID'])); ?>
+                    <img src="<?php echo $url; ?> " title="<?php echo $post['post_title']; ?>"/>
+                    <div class="overlay">
+                        <a href="<?php echo get_permalink($post['ID']) ?>" class="title"><?php echo $post['post_title']; ?></a>
+<!--                          <?php $date = new DateTime($post['post_date']); ?>
+                        <div class="date">
+                            <i class="fa fa-calendar"></i>
+                            <?php echo date('M d', strtotime($post['post_date'])); ?>
+                        </div>
+                        <div class="author">
+                            <i class="fa fa-pencil"></i>
+                            <?php echo get_userdata($post['post_author'])->user_login; ?>
+                        </div>
+                        <br>-->
+                        <br>
+                        <br>
+                        <div class="center">
+                            <a href="<?php echo get_permalink($post['ID']) ?>" class=""><i class="fa fa-external-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <?php } ?>
+        <?php wp_reset_postdata(); ?>
+    </div>
+<?php
+}

@@ -31,6 +31,11 @@
         
         <div class="row">
             
+            
+            <div class="athena-copyright">
+                <?php echo esc_attr( get_theme_mod( 'copyright_text', 'Copyright Company Name 2015' ) ); ?>
+            </div>
+            
             <div id="authica-social">
                 
                 <?php if( get_theme_mod( 'facebook_url', 'http://facebook.com' ) ) : ?>
@@ -72,11 +77,6 @@
                 <?php endif; ?>
                 
             </div>
-            
-            <a href="<?php echo esc_url(__('https://wordpress.org/', 'athena')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'athena'), 'WordPress'); ?></a>
-            <span class="sep"> | </span>
-
-            <?php printf( esc_html__('Theme: %1$s by %2$s.', 'athena'), 'Athena', '<a href="https://smartcatdesign.net" rel="designer">Smartcat</a>'); ?>
 
             <?php $menu = wp_nav_menu( array ( 
                 'theme_location'    => 'footer', 
@@ -85,9 +85,12 @@
 
                 ) ); ?>
             <br>
-            <div class="athena-copyright">
-                <?php echo esc_attr( get_theme_mod( 'copyright_text', 'Copyright Company Name 2015' ) ); ?>
-            </div>
+
+            <a href="https://smartcatdesign.net" rel="designer" style="display: block !important">
+               <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo_mini.png'?>"/>
+                Design by Smartcat 
+            </a>
+            
             
         </div>
         

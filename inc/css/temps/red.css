@@ -16,7 +16,7 @@ a,a:visited{
 a:hover,
 a:focus,
 .site-info a:hover{
-    color: #C0392B;
+    color: #ec7063;
 }
 
 ul.athena-nav > li.menu-item.current-menu-item a,
@@ -36,7 +36,7 @@ input[type="submit"]{
 }
 
 .athena-button.primary:hover{
-    background: #C0392B;
+    background: #ec7063;
 }
 
 #athena-featured{

@@ -34,6 +34,18 @@ jQuery( document ).ready( function( $ ){
             selector.parent('label').append('<span class="theme-color" style="background: #e85387"></span>')
 
         }
+        
+        if( selector.val()  === 'yellow' ) {
+
+            selector.parent('label').append('<span class="theme-color" style="background: #f1c40f"></span>')
+
+        }
+        
+        if( selector.val()  === 'darkblue' ) {
+
+            selector.parent('label').append('<span class="theme-color" style="background: #34495e"></span>')
+
+        }
 
     });
 });

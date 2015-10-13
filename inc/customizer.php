@@ -25,14 +25,24 @@ function athena_customize_register( $wp_customize ) {
     // ****************** General ******************
     // *********************************************
 
+
+    
+    $wp_customize->add_panel( 'logo', array (
+        'title' => __( 'Logo, Title & Favicon', 'athena' ),
+        'description' => __( 'set the logo image, site title, description and site icon favicon', 'athena' ),
+        'priority' => 10
+    ) );
+    
+    $wp_customize->add_section( 'logo', array (
+        'title'                 => __( 'Logo', 'athena' ),
+        'panel'                 => 'logo',
+    ) );
+    
     $wp_customize->add_panel( 'general', array (
         'title' => __( 'General', 'athena' ),
         'description' => __( 'General settings for your site, such as title, favicon and more', 'athena' ),
         'priority' => 10
     ) );
-
-
-
 
 
     // *********************************************
@@ -217,7 +227,7 @@ function athena_customize_register( $wp_customize ) {
     // ****************** Homepage *****************
     // *********************************************
     $wp_customize->add_panel( 'homepage', array (
-        'title'                 => __( 'Homepage', 'athena' ),
+        'title'                 => __( 'Frontpage', 'athena' ),
         'description'           => __( 'Customize the appearance of your homepage', 'athena' ),
         'priority'              => 10
     ) );
@@ -240,7 +250,7 @@ function athena_customize_register( $wp_customize ) {
     
     $wp_customize->add_section( 'title_tagline', array (
         'title' => __( 'Site Title, Tagline & Favicon', 'athena' ),
-        'panel' => 'homepage',
+        'panel' => 'logo',
     ) );
     
     $wp_customize->add_setting( 'overlay_bool', array (
@@ -400,10 +410,7 @@ function athena_customize_register( $wp_customize ) {
         'priority'              => 10
     ) );
     
-    $wp_customize->add_section( 'logo', array (
-        'title'                 => __( 'Logo', 'athena' ),
-        'panel'                 => 'appearance',
-    ) );
+
     
     $wp_customize->add_section( 'color', array (
         'title'                 => __( 'Skin Color', 'athena' ),
@@ -469,7 +476,6 @@ function athena_customize_register( $wp_customize ) {
             'none'              => __( 'No Sidebar', 'athena'),
             'right'             => __( 'Right', 'athena'),
             'left'              => __( 'Left', 'athena'),
-            'both'              => __( 'Left + Right', 'athena'),
         )
     ) );
     
@@ -481,7 +487,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'home_sidebar', array(
         'type'                  => 'radio',
         'section'               => 'templates',
-        'label'                 => __( 'Homepage Sidebar', 'athena' ),
+        'label'                 => __( 'Sidebar on Frontpage', 'athena' ),
         'description'           => __( 'You can select on/off to display/hide the sidebar on the Homepage', '' ),
         'choices'               => array(
             'on'              => __( 'On', 'athena'),
@@ -499,7 +505,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'single_sidebar', array(
         'type'                  => 'radio',
         'section'               => 'templates',
-        'label'                 => __( 'Single Post Sidebar', 'athena' ),
+        'label'                 => __( 'Sidebar on Single Posts', 'athena' ),
         'description'           => __( 'You can select on/off to display/hide the sidebar on single Posts', '' ),
         'choices'               => array(
             'on'              => __( 'On', 'athena'),
@@ -517,7 +523,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'page_sidebar', array(
         'type'                  => 'radio',
         'section'               => 'templates',
-        'label'                 => __( 'Page Sidebar', 'athena' ),
+        'label'                 => __( 'Sidebar on Pages', 'athena' ),
         'description'           => __( 'You can select on/off to display/hide the sidebar on Pages', '' ),
         'choices'               => array(
             'on'              => __( 'On', 'athena'),
@@ -541,7 +547,9 @@ function athena_customize_register( $wp_customize ) {
             'green'             => __( 'Green', 'athena' ),
             'blue'              => __( 'Blue', 'athena' ),
             'red'               => __( 'Red', 'athena' ),
-            'pink'              => __( 'Pink', 'athena' )
+            'pink'              => __( 'Pink', 'athena' ),
+            'yellow'            => __( 'Yellow', 'athena' ),
+            'darkblue'          => __( 'Dark Blue', 'athena' ),
         )
         
     ) );

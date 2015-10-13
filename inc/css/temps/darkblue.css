@@ -4,28 +4,27 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : Oct 5, 2015, 10:57:12 AM
+    Created on : Oct 12, 2015, 11:17:31 PM
     Author     : Bilal
 */
 
 
 
-
 a,a:visited{
-    color: #5dade2;
+    color: #34495e;
 }
 
 a:hover,
 a:focus,
 .site-info a:hover{
-    color: #5dade2;
+    color: #415b76;
 }
 
 ul.athena-nav > li.menu-item.current-menu-item a,
 ul.athena-nav > li.menu-item.current-menu-parent a,
 ul.athena-nav > li.menu-item a:hover{
     
-    border-bottom: 2px solid #5dade2;
+    border-bottom: 2px solid #34495e;
 
 }
 
@@ -37,7 +36,7 @@ input[type="submit"],
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit.alt, 
 .woocommerce a.button.alt{
-    background: #5dade2;
+    background: #34495e;
     color: #fff;
 }
 
@@ -46,20 +45,20 @@ input[type="submit"],
 .woocommerce input.button.alt:hover,
 .woocommerce #respond input#submit.alt:hover, 
 .woocommerce a.button.alt:hover{
-    background: #5dade2;
+    background: #415b76;
 }
 
 .woocommerce .woocommerce-message{
-    border-top-color: #5dade2;
+    border-top-color: #415b76;
 }
 
 .woocommerce .woocommerce-message:before{
-    color: #5dade2;
+    color: #415b76;
 }
 
 .main-navigation .athena-cart,
 .athena-mobile-cart .athena-cart{
-    background: #5dade2 !important;
+    background: #34495e !important;
     transition: 0.25s all ease-in-out;
     -moz-transition: 0.25s all ease-in-out;
     -webkit-transition: 0.25s all ease-in-out;
@@ -68,12 +67,12 @@ input[type="submit"],
 
 .main-navigation .athena-cart:hover,
 .athena-mobile-cart .athena-cart:hover{
-    background: #5dade2;
+    background: #415b76;
 }
 
 #athena-featured,
 .woocommerce span.onsale{
-    background: #5dade2;
+    background: #34495e;
     color: #fff;
 }
 #athena-featured .fa{
@@ -81,13 +80,13 @@ input[type="submit"],
 }
 
 #authica-social a:hover{
-    color: #5dade2;
+    color: #34495e;
 }
 
 .scroll-top:hover{
-    background: #5dade2;
+    background: #34495e;
 }
 
 #athena-overlay-trigger{
-    border-color: transparent transparent #5dade2 transparent;
+    border-color: transparent transparent #34495e transparent;
 }
