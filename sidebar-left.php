@@ -6,12 +6,13 @@
  *
  * @package Athena
  */
-if (!is_active_sidebar('sidebar-right')) {
+if (!is_active_sidebar('sidebar-left')) {
     return;
 }
 ?>
+
 <div class="col-sm-3" id="athena-sidebar">
     <div id="secondary" class="widget-area" role="complementary">
-        <?php dynamic_sidebar('sidebar-right'); ?>
+        <?php dynamic_sidebar('sidebar-left'); ?>
     </div><!-- #secondary -->
 </div>

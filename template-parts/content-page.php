@@ -19,7 +19,10 @@
 <?php endif; ?>
 
 <div class="row">
-    <div class="col-sm-<?php echo (!is_active_sidebar('sidebar-right') ) ? '12' : '9'; ?>">
+    
+    <?php get_sidebar('left'); ?>
+    
+    <div class="col-sm-<?php echo athena_main_width(); ?>">
 
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
@@ -60,11 +63,8 @@
 
         </article><!-- #post-## -->
     </div>
-    <?php if (is_active_sidebar('sidebar-right')) : ?>
-        <div class="col-sm-3" id="athena-sidebar">
-            <?php get_sidebar(); ?>
-        </div>
-    <?php endif; ?>
+
+    <?php get_sidebar(); ?>
 
 </div>
 

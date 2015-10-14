@@ -33,38 +33,38 @@
             
             
             <div class="athena-copyright">
-                <?php echo esc_attr( get_theme_mod( 'copyright_text', 'Copyright Company Name 2015' ) ); ?>
+                <?php echo esc_attr( get_theme_mod( 'copyright_text', __( 'Copyright Company Name 2015', 'athena' ) ) ); ?>
             </div>
             
             <div id="authica-social">
                 
-                <?php if( get_theme_mod( 'facebook_url', 'http://facebook.com' ) ) : ?>
+                <?php if( get_theme_mod( 'facebook_url', 'http://facebook.com' ) != '' ) : ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'facebook_url', 'http://facebook.com' ) ); ?>" target="_BLANK" class="athena-facebook">
                     <span class="fa fa-facebook"></span>
                 </a>
                 <?php endif; ?>
                 
                 
-                <?php if( get_theme_mod( 'gplus_url', 'http://gplus.com' ) ) : ?>
+                <?php if( get_theme_mod( 'gplus_url', 'http://gplus.com' ) != '' ) : ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'gplus_url', 'http://gplus.com' ) ); ?>" target="_BLANK" class="athena-gplus">
                     <span class="fa fa-google-plus"></span>
                 </a>
                 <?php endif; ?>
                 
-                <?php if( get_theme_mod( 'instagram_url', 'http://instagram.com' ) ) : ?>
+                <?php if( get_theme_mod( 'instagram_url', 'http://instagram.com' ) != '' ) : ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'instagram_url', 'http://instagram.com' ) ); ?>" target="_BLANK" class="athena-instagram">
                     <span class="fa fa-instagram"></span>
                 </a>
                 <?php endif; ?>
                 
-                <?php if( get_theme_mod( 'linkedin_url', 'http://linkedin.com' ) ) : ?>
+                <?php if( get_theme_mod( 'linkedin_url', 'http://linkedin.com' ) != '' ) : ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'linkedin_url', 'http://linkedin.com' ) ); ?>" target="_BLANK" class="athena-linkedin">
                     <span class="fa fa-linkedin"></span>
                 </a>
                 <?php endif; ?>
                 
                 
-                <?php if( get_theme_mod( 'pinterest_url', 'http://pinterest.com' ) ) : ?>
+                <?php if( get_theme_mod( 'pinterest_url', 'http://pinterest.com' ) != '' ) : ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'pinterest_url', 'http://pinterest.com' ) ); ?>" target="_BLANK" class="athena-pinterest">
                     <span class="fa fa-pinterest"></span>
                 </a>

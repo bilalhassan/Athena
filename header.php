@@ -53,16 +53,16 @@
 
                                 <div class="site-branding">
                                     
-                                    <div id="athena-logo" class="<?php echo get_theme_mod('logo_bool', 'off' ) == 'on' ? 'show' : 'hidden'; ?>">
+                                    <div id="athena-logo" class="<?php echo get_theme_mod('logo_bool', 'on' ) == 'on' ? 'show' : 'hidden'; ?>">
                                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                                            <img src="<?php echo get_theme_mod( 'logo' ) ?>" title="<?php bloginfo('name'); ?>" />
+                                            <img src="<?php echo get_theme_mod( 'logo', get_template_directory_uri() . '/inc/images/logo.png' ) ?>" title="<?php bloginfo('name'); ?>" />
                                         </a>
                                     </div>
-                                        <h1 class="site-title <?php echo get_theme_mod('logo_bool', 'off' ) == 'off' ? 'show' : 'hidden'; ?>">
+                                        <h1 class="site-title <?php echo get_theme_mod('logo_bool', 'on' ) == 'off' ? 'show' : 'hidden'; ?>">
                                             <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
                                         </h1>
 
-                                        <p class="site-description <?php echo get_theme_mod('logo_bool', 'off' ) == 'off' ? 'show' : 'hidden'; ?>">
+                                        <p class="site-description <?php echo get_theme_mod('logo_bool', 'on' ) == 'off' ? 'show' : 'hidden'; ?>">
                                             <?php bloginfo('description'); ?>
                                         </p>
                                         
@@ -74,16 +74,19 @@
 
                             <div class="athena-header-menu">
 
-                                <div class="athena-mobile-cart">
-                                    
-                                    <a class="athena-cart" href="<?php echo WC()->cart->get_cart_url() ; ?>"><span class="fa fa-shopping-cart"></span> <?php echo WC()->cart->get_cart_total(); ?></a>
-    
-                                    
+                                <?php if( class_exists( 'WooCommerce' ) ) : ?>
+                                
+                                    <div class="athena-mobile-cart">
 
-                                </div>
+                                        <a class="athena-cart" href="<?php echo WC()->cart->get_cart_url() ; ?>"><span class="fa fa-shopping-cart"></span> <?php echo WC()->cart->get_cart_total(); ?></a>
+
+                                    </div>
+                                
+                                <?php endif; ?>
+                                
                                 
                                 <nav id="site-navigation" class="main-navigation" role="navigation">
-                                    <!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'athena'); ?></button>-->
+                                    
                                     <?php
                                     
                                     if( has_nav_menu( 'primary' ) ) :
@@ -95,7 +98,7 @@
                                         ));
                                     else :
                                         
-                                        echo '<div id="athena-add-menu"><a class="athena-cart" href="' . admin_url( 'nav-menus.php' ) . '">' . __( 'Add a Primary Menu' ) . '</a></div>';
+                                        echo '<div id="athena-add-menu"><a class="athena-cart" href="' . admin_url( 'nav-menus.php' ) . '">' . __( 'Add a Primary Menu', 'athena' ) . '</a></div>';
                                     
                                     endif;
                                     

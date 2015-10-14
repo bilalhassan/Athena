@@ -69,7 +69,7 @@ function athena_customize_register( $wp_customize ) {
 
     // 1st slide
     $wp_customize->add_setting( 'featured_image1', array (
-        'default'               => '',
+        'default'               => get_template_directory_uri() . '/inc/images/athena.jpg',
         'transport'             => 'postMessage',
     ) );
 
@@ -90,7 +90,7 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'text',
         'section'               => 'slide1',
         'label'                 => __( 'Header Text', 'athena' ),
-        'description'           => __( 'The main heading text, leave blank to hide', '' ),
+        'description'           => __( 'The main heading text, leave blank to hide', 'athena' ),
     ) );
 
 
@@ -103,7 +103,7 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'text',
         'section'               => 'slide1',
         'label'                 => __( 'Button #1 Text', 'athena' ),
-        'description'           => __( 'The text for the button, leave blank to hide', '' ),
+        'description'           => __( 'The text for the button, leave blank to hide', 'athena' ),
     ) );
 
     $wp_customize->add_setting( 'slide1_button1_url', array (
@@ -115,7 +115,6 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'text',
         'section'               => 'slide1',
         'label'                 => __( 'Button #1 URL', 'athena' ),
-        'description'           => __( 'The text for the button, leave blank to hide', '' ),
     ) );
    
 
@@ -128,7 +127,7 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'text',
         'section'               => 'slide1',
         'label'                 => __( 'Button #2 Text', 'athena' ),
-        'description'           => __( 'The text for the button, leave blank to hide', '' ),
+        'description'           => __( 'The text for the button, leave blank to hide', 'athena' ),
     ) );
 
     $wp_customize->add_setting( 'slide1_button2_url', array (
@@ -140,13 +139,12 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'text',
         'section'               => 'slide1',
         'label'                 => __( 'Button #2 URL', 'athena' ),
-        'description'           => __( 'The text for the button, leave blank to hide', '' ),
     ) );
     
     
     // 2nd slide
     $wp_customize->add_setting( 'featured_image2', array (
-        'default'               => '',
+        'default'               => get_template_directory_uri() . '/inc/images/athena2.jpg',
         'transport'             => 'postMessage',
     ) );
 
@@ -167,7 +165,7 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'text',
         'section'               => 'slide2',
         'label'                 => __( 'Header Text', 'athena' ),
-        'description'           => __( 'The main heading text, leave blank to hide', '' ),
+        'description'           => __( 'The main heading text, leave blank to hide', 'athena' ),
     ) );
 
     $wp_customize->add_setting( 'slide2_button1_text', array (
@@ -179,7 +177,7 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'text',
         'section'               => 'slide2',
         'label'                 => __( 'Button #1 Text', 'athena' ),
-        'description'           => __( 'The text for the button, leave blank to hide', '' ),
+        'description'           => __( 'The text for the button, leave blank to hide', 'athena' ),
     ) );
 
     $wp_customize->add_setting( 'slide2_button1_url', array (
@@ -191,7 +189,6 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'text',
         'section'               => 'slide2',
         'label'                 => __( 'Button #1 URL', 'athena' ),
-        'description'           => __( 'The text for the button, leave blank to hide', '' ),
     ) );
     
 
@@ -204,7 +201,7 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'text',
         'section'               => 'slide2',
         'label'                 => __( 'Button #2 Text', 'athena' ),
-        'description'           => __( 'The text for the button, leave blank to hide', '' ),
+        'description'           => __( 'The text for the button, leave blank to hide', 'athena' ),
     ) );
 
     $wp_customize->add_setting( 'slide2_button2_url', array (
@@ -216,7 +213,6 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'text',
         'section'               => 'slide2',
         'label'                 => __( 'Button #2 URL', 'athena' ),
-        'description'           => __( 'The text for the button, leave blank to hide', '' ),
     ) );
     
     
@@ -283,7 +279,7 @@ function athena_customize_register( $wp_customize ) {
     
     // Callout #1
     $wp_customize->add_setting( 'callout1_icon', array (
-        'default'               => 'fa fa-camera-retro',
+        'default'               => 'fa fa-laptop',
         'transport'             => 'postMessage',
     ) );
     
@@ -322,7 +318,7 @@ function athena_customize_register( $wp_customize ) {
     
     // Callout #2
     $wp_customize->add_setting( 'callout2_icon', array (
-        'default'               => '',
+        'default'               => 'fa fa-magic',
         'transport'             => 'postMessage',
     ) );
     
@@ -334,7 +330,7 @@ function athena_customize_register( $wp_customize ) {
     ));
     
     $wp_customize->add_setting( 'callout2_title', array (
-        'default'               => '',
+        'default'               => __('Customizable', 'athena'),
         'transport'             => 'postMessage',
     ) );
     
@@ -347,7 +343,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'callout2_text', array (
-        'default'               => '',
+        'default'               => __('Athena is easy to use and customize without having to touch code', 'athena'),
         'transport'             => 'postMessage',
     ) );
     
@@ -361,7 +357,7 @@ function athena_customize_register( $wp_customize ) {
     
     // Callout #3
     $wp_customize->add_setting( 'callout3_icon', array (
-        'default'               => '',
+        'default'               => 'fa fa-shopping-cart',
         'transport'             => 'postMessage',
     ) );
     
@@ -373,7 +369,7 @@ function athena_customize_register( $wp_customize ) {
     ));
     
     $wp_customize->add_setting( 'callout3_title', array (
-        'default'               => '',
+        'default'               => __('WooCommerce', 'athena'),
         'transport'             => 'postMessage',
     ) );
     
@@ -386,7 +382,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'callout3_text', array (
-        'default'               => '',
+        'default'               => __('Athena supports WooCommerce to build an online shopping site', 'athena'),
         'transport'             => 'postMessage',
     ) );
     
@@ -422,14 +418,14 @@ function athena_customize_register( $wp_customize ) {
         'panel'                 => 'appearance',
     ) );
     
-    $wp_customize->add_section( 'templates', array (
-        'title'                 => __( 'Sidebars', 'athena' ),
-        'panel'                 => 'appearance',
-    ) );
+//    $wp_customize->add_section( 'templates', array (
+//        'title'                 => __( 'Sidebars', 'athena' ),
+//        'panel'                 => 'appearance',
+//    ) );
     
     // Logo Bool
     $wp_customize->add_setting( 'logo_bool', array (
-        'default'               => 'off',
+        'default'               => 'on',
         'transport'             => 'postMessage',
     ) );
 
@@ -446,7 +442,7 @@ function athena_customize_register( $wp_customize ) {
     
     // Logo Image
     $wp_customize->add_setting( 'logo', array (
-        'default'               => '',
+        'default'               => get_template_directory_uri() . '/inc/images/logo.png',
         'transport'             => 'postMessage',
     ) );
 
@@ -471,7 +467,7 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'radio',
         'section'               => 'templates',
         'label'                 => __( 'Sidebar Location', 'athena' ),
-        'description'           => __( 'Do you want the sidebar to be on the left or the right side ?', '' ),
+        'description'           => __( 'Do you want the sidebar to be on the left or the right side ?', 'athena' ),
         'choices'               => array(
             'none'              => __( 'No Sidebar', 'athena'),
             'right'             => __( 'Right', 'athena'),
@@ -488,7 +484,7 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'radio',
         'section'               => 'templates',
         'label'                 => __( 'Sidebar on Frontpage', 'athena' ),
-        'description'           => __( 'You can select on/off to display/hide the sidebar on the Homepage', '' ),
+        'description'           => __( 'You can select on/off to display/hide the sidebar on the Homepage', 'athena' ),
         'choices'               => array(
             'on'              => __( 'On', 'athena'),
             'off'             => __( 'Off', 'athena')
@@ -506,7 +502,7 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'radio',
         'section'               => 'templates',
         'label'                 => __( 'Sidebar on Single Posts', 'athena' ),
-        'description'           => __( 'You can select on/off to display/hide the sidebar on single Posts', '' ),
+        'description'           => __( 'You can select on/off to display/hide the sidebar on single Posts', 'athena' ),
         'choices'               => array(
             'on'              => __( 'On', 'athena'),
             'off'             => __( 'Off', 'athena')
@@ -524,7 +520,7 @@ function athena_customize_register( $wp_customize ) {
         'type'                  => 'radio',
         'section'               => 'templates',
         'label'                 => __( 'Sidebar on Pages', 'athena' ),
-        'description'           => __( 'You can select on/off to display/hide the sidebar on Pages', '' ),
+        'description'           => __( 'You can select on/off to display/hide the sidebar on Pages', 'athena' ),
         'choices'               => array(
             'on'              => __( 'On', 'athena'),
             'off'             => __( 'Off', 'athena')
@@ -555,7 +551,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'header_font', array (
-        'default'               => 'green',
+        'default'               => 'Raleway, sans-serif',
         'transport'             => 'postMessage',
     ) );
     
@@ -569,7 +565,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'theme_font', array (
-        'default'               => 'green',
+        'default'               => 'Raleway, sans-serif',
         'transport'             => 'postMessage',
     ) );
     
@@ -624,7 +620,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'footer_background_image', array (
-        'default'               => '',
+        'default'               => get_template_directory_uri() . '/inc/images/footer.jpg',
         'transport'             => 'postMessage',
     ) );
 
@@ -642,7 +638,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'copyright_text', array (
-        'default'               => __( 'Copyright Company Name' ) . date( 'Y' ),
+        'default'               => __( 'Copyright Company Name', 'athena' ) . date( 'Y' ),
         'transport'             => 'postMessage',
     ) );
     
@@ -659,7 +655,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'facebook_url', array (
-        'default'               => '',
+        'default'               => '#',
         'transport'             => 'postMessage',
     ) );
     
@@ -671,7 +667,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'gplus_url', array (
-        'default'               => '',
+        'default'               => '#',
         'transport'             => 'postMessage',
     ) );
     
@@ -683,7 +679,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'instagram_url', array (
-        'default'               => '',
+        'default'               => '#',
         'transport'             => 'postMessage',
     ) );
     
@@ -695,7 +691,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'linkedin_url', array (
-        'default'               => '',
+        'default'               => '#',
         'transport'             => 'postMessage',
     ) );
     
@@ -707,7 +703,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'pinterest_url', array (
-        'default'               => '',
+        'default'               => '#',
         'transport'             => 'postMessage',
     ) );
     
@@ -719,7 +715,7 @@ function athena_customize_register( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting( 'twitter_url', array (
-        'default'               => '',
+        'default'               => '#',
         'transport'             => 'postMessage',
     ) );
     

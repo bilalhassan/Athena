@@ -19,7 +19,7 @@ function athena_setup() {
     
     
         if( !defined( 'ATHENA_VERSION' ) ) :
-            define('ATHENA_VERSION', '0.42');
+            define('ATHENA_VERSION', '0.44');
         endif;
     
         
@@ -42,7 +42,8 @@ function athena_setup() {
 	 */
 	add_theme_support( 'title-tag' );
         add_theme_support('woocommerce');
-
+        add_editor_style('');
+        
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *

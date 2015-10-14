@@ -12,6 +12,8 @@
  * 
  * 
  */
+
+
 function athena_scripts() {
 
     wp_enqueue_style('athena-style', get_stylesheet_uri());
@@ -70,8 +72,18 @@ add_action('wp_enqueue_scripts', 'athena_scripts');
 function athena_widgets_init() {
 
     register_sidebar(array(
-        'name' => esc_html__('Sidebar', 'athena'),
+        'name' => esc_html__('Right Sidebar', 'athena'),
         'id' => 'sidebar-right',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
+
+    register_sidebar(array(
+        'name' => esc_html__('Left Sidebar', 'athena'),
+        'id' => 'sidebar-left',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => '</aside>',
@@ -198,15 +210,26 @@ function athena_main_width(){
     
     $width = 12;
     
-    if( get_theme_mod( 'sidebar_location', 'right' ) == 'none' ) :
-        
-        $width = 12;
+//    if( get_theme_mod( 'sidebar_location', 'right' ) == 'none' ) :
+//        
+//        $width = 12;
+//    
+//    else :
+//        
+//        $width = 8;
+//        
+//    endif;
     
-    else :
+    if( is_active_sidebar('sidebar-left') && is_active_sidebar('sidebar-right') ) :
         
-        $width = 8;
+        $width = 6;
         
+    elseif( is_active_sidebar('sidebar-left') || is_active_sidebar('sidebar-right') ) :
+        $width = 9;
+    else:
+        $width = 12;
     endif;
+    
     
     return $width;
 }
@@ -224,13 +247,18 @@ add_action('wp_ajax_athena_get_image', 'athena_get_image');
 function athena_customize_nav($items) {
 
     $items .= '<li class="menu-item"><a class="athena-search" href="#search" role="button" data-toggle="modal"><span class="fa fa-search"></span></a></li>';
-    $items .= '<li><a class="athena-cart" href="' . WC()->cart->get_cart_url() . '"><span class="fa fa-shopping-cart"></span> ' . WC()->cart->get_cart_total() . '</a></li>';
+    
+    if( class_exists( 'WooCommerce' ) ) :
+        $items .= '<li><a class="athena-cart" href="' . WC()->cart->get_cart_url() . '"><span class="fa fa-shopping-cart"></span> ' . WC()->cart->get_cart_total() . '</a></li>';
+    endif;
+    
+    
     
     return $items;
 }
 
 add_filter('wp_nav_menu_items', 'athena_customize_nav');
-
+//delete_option('theme_mods_athena');
 function athena_custom_css() {
     ?>
     <style type="text/css">
@@ -306,7 +334,7 @@ function athena_render_homepage() { ?>
 
         <div id="athena-slider" class="hero">
 
-            <div id="slide1" data-thumb="<?php echo esc_url(get_theme_mod('featured_image1', get_template_directory_uri() . '/inc/images/athena.jpg')); ?>" data-src="<?php echo esc_url(get_theme_mod('featured_image1', get_template_directory_uri() . '/inc/images/athena.jpg')); ?>">
+            <div id="slide1" data-thumb="<?php echo esc_url( get_theme_mod('featured_image1', get_template_directory_uri() . '/inc/images/athena.jpg' ) ); ?>" data-src="<?php echo esc_url( get_theme_mod( 'featured_image1', get_template_directory_uri() . '/inc/images/athena.jpg' ) ); ?>">
 
                 <div class="overlay">
                     <div class="row">

@@ -16,10 +16,11 @@ get_header();
         <?php do_action('athena_homepage'); ?>
 
         <div class="row">
-
-            <?php do_action( 'athena-sidebar-left', array( 'frontpage' ) ); ?>
             
+            <?php get_sidebar('left'); ?>
+
             <div class="homepage-page-content col-sm-<?php echo athena_main_width(); ?>">
+                
                 <?php if (have_posts()) : ?>
 
                     <?php if (is_home() && !is_front_page()) : ?>
@@ -55,9 +56,11 @@ get_header();
                 <?php endif; ?>
 
             </div>
-            
-            <?php do_action( 'athena-sidebar-right', array( 'frontpage' ) ); ?>
-            
+
+
+            <?php get_sidebar(); ?>
+
+
         </div>
     </main><!-- #main -->
 </div><!-- #primary -->
