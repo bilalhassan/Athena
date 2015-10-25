@@ -8,9 +8,8 @@ and open the template in the editor.
     Author     : Bilal
 */
 
-
 a,a:visited{
-    color: #E74C3C;
+    color: #36B3A8;
 }
 
 a:hover,
@@ -23,24 +22,63 @@ ul.athena-nav > li.menu-item.current-menu-item a,
 ul.athena-nav > li.menu-item.current-menu-parent a,
 ul.athena-nav > li.menu-item a:hover{
     
-    border-bottom: 2px solid #E74C3C;
+    border-bottom: 2px solid #ec7063;
 
+}
+
+ul.athena-nav > li > ul li.current-menu-item > a{
+    color: #36B3A8;
+}
+
+ul.athena-nav ul li a:hover{
+    color: #ec7063;
 }
 
 .athena-button.primary,
 button, 
 input[type="button"], 
-input[type="submit"]{
-    background: #E74C3C;
+input[type="submit"],
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt{
+    background: #36B3A8;
     color: #fff;
 }
 
-.athena-button.primary:hover{
+.athena-button.primary:hover,
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover{
     background: #ec7063;
 }
 
-#athena-featured{
-    background: #E74C3C;
+.woocommerce .woocommerce-message{
+    border-top-color: #36B3A8;
+}
+
+.woocommerce .woocommerce-message:before{
+    color: #36B3A8;
+}
+
+.main-navigation .athena-cart,
+.athena-mobile-cart .athena-cart{
+    background: #36B3A8 !important;
+    transition: 0.25s all ease-in-out;
+    -moz-transition: 0.25s all ease-in-out;
+    -webkit-transition: 0.25s all ease-in-out;
+    top: -5px;
+}
+
+.main-navigation .athena-cart:hover,
+.athena-mobile-cart .athena-cart:hover{
+    background: #ec7063 !important;
+}
+
+#athena-featured,
+.woocommerce span.onsale{
+    background: #36B3A8;
     color: #fff;
 }
 #athena-featured .fa{
@@ -48,13 +86,13 @@ input[type="submit"]{
 }
 
 #authica-social a:hover{
-    color: #E74C3C;
+    color: #ec7063;
 }
 
 .scroll-top:hover{
-    background: #E74C3C;
+    background: #ec7063;
 }
 
 #athena-overlay-trigger{
-    border-color: transparent transparent #E74C3C transparent;
+    border-color: transparent transparent #36B3A8 transparent;
 }

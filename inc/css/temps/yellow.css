@@ -22,8 +22,16 @@ ul.athena-nav > li.menu-item.current-menu-item a,
 ul.athena-nav > li.menu-item.current-menu-parent a,
 ul.athena-nav > li.menu-item a:hover{
     
-    border-bottom: 2px solid #f1c40f;
+    border-bottom: 2px solid #f5d313;
 
+}
+
+ul.athena-nav > li > ul li.current-menu-item > a{
+    color: #f1c40f;
+}
+
+ul.athena-nav ul li a:hover{
+    color: #f5d313;
 }
 
 .athena-button.primary,
@@ -47,11 +55,11 @@ input[type="submit"],
 }
 
 .woocommerce .woocommerce-message{
-    border-top-color: #f5d313;
+    border-top-color: #f1c40f;
 }
 
 .woocommerce .woocommerce-message:before{
-    color: #f5d313;
+    color: #f1c40f;
 }
 
 .main-navigation .athena-cart,
@@ -65,7 +73,7 @@ input[type="submit"],
 
 .main-navigation .athena-cart:hover,
 .athena-mobile-cart .athena-cart:hover{
-    background: #f5d313;
+    background: #f5d313 !important;
 }
 
 #athena-featured,
@@ -78,11 +86,11 @@ input[type="submit"],
 }
 
 #authica-social a:hover{
-    color: #f1c40f;
+    color: #f5d313;
 }
 
 .scroll-top:hover{
-    background: #f1c40f;
+    background: #f5d313;
 }
 
 #athena-overlay-trigger{

@@ -12,32 +12,39 @@ get_header();
 
     <main id="main" class="site-main athena-blog-page" role="main">
 
-        <?php //athena_recent_posts(); ?>
-        
-        <?php if (have_posts()) : ?>
 
-            <div class="athena-blog-content col-sm-<?php echo (!is_active_sidebar('sidebar-right') ) ? '12' : '8'; ?>">
+        <div class="row">
 
-                <?php /* Start the Loop */ ?>
-                <?php while (have_posts()) : the_post(); ?>
-                
-                    <?php get_template_part('template-parts/content-blog', get_post_format() ); ?>
+            <?php get_sidebar('left'); ?>
 
-                <?php endwhile; ?>
+            <div class="athena-blog-content col-sm-<?php echo athena_main_width(); ?>">
+                <?php if (have_posts()) : ?>
 
-                <?php echo paginate_links(); ?>
 
-            <?php else : ?>
 
-                <?php get_template_part('template-parts/content', 'none'); ?>
+                    <?php /* Start the Loop */ ?>
+                    <?php while (have_posts()) : the_post(); ?>
 
-            <?php endif; ?>
-        </div>
+                        <?php get_template_part('template-parts/content-blog', get_post_format()); ?>
 
-        <div class="col-sm-4" id="athena-sidebar">
+                    <?php endwhile; ?>
+
+
+
+                <?php else : ?>
+
+                    <?php get_template_part('template-parts/content', 'none'); ?>
+
+                <?php endif; ?>
+            </div>
+
             <?php get_sidebar(); ?>
-        </div>            
 
+        </div>
+        <div class="clear"></div>
+        <div class="athena-pagination">
+            <?php echo paginate_links(); ?>
+        </div>
     </main><!-- #main -->
 </div><!-- #primary -->
 

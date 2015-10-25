@@ -31,13 +31,12 @@
                 <div class="entry-meta">
                     <div class="meta-detail">
 
-                        <span><span class="fa fa-calendar"></span> <?php echo athena_posted_on(); ?></span>
+                        <div><span class="fa fa-calendar"></span> <?php echo athena_posted_on(); ?></div>
 
-                        <span class="author"><?php echo get_the_author() ? '<span class="fa fa-user"></span> ' . get_the_author() : ' '; ?></span>
+                        <div class="author"><?php echo get_the_author() ? '<span class="fa fa-user"></span> ' . get_the_author() : ' '; ?></div>
 
-                        <span><?php echo get_comments_number() == 0 ? '<span class="fa fa-comment"></span> ' . __('No comments yet', 'athena') : get_comments_number() . ' Comments'; ?></span>
+                        <div><?php echo get_comments_number() == 0 ? '<span class="fa fa-comment"></span> ' . __('No comments yet', 'athena') : get_comments_number() . ' Comments'; ?></div>
 
-                        <span><?php athena_entry_footer(); ?></span>
 
                     </div>
 

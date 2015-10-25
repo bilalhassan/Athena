@@ -71,6 +71,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'featured_image1', array (
         'default'               => get_template_directory_uri() . '/inc/images/athena.jpg',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control1', array (
@@ -84,6 +85,8 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'featured_image1_title', array (
         'default'               => __( 'Welcome to Athena', 'athena' ),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
+
     ) );
     
     $wp_customize->add_control( 'featured_image1_title', array(
@@ -97,6 +100,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'slide1_button1_text', array (
         'default'               => __( 'View Features', 'athena' ),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'slide1_button1_text', array(
@@ -109,6 +113,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'slide1_button1_url', array (
         'default'               => '',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'slide1_button1_url', array(
@@ -121,6 +126,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'slide1_button2_text', array (
         'default'               => __( 'Learn More', 'athena' ),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'slide1_button2_text', array(
@@ -133,6 +139,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'slide1_button2_url', array (
         'default'               => '',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'slide1_button2_url', array(
@@ -146,6 +153,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'featured_image2', array (
         'default'               => get_template_directory_uri() . '/inc/images/athena2.jpg',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control2', array (
@@ -159,6 +167,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'featured_image2_title', array (
         'default'               => __( 'Welcome to Athena', 'athena' ),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'featured_image2_title', array(
@@ -171,6 +180,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'slide2_button1_text', array (
         'default'               => __( 'View Features', 'athena' ),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'slide2_button1_text', array(
@@ -183,6 +193,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'slide2_button1_url', array (
         'default'               => '',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'slide2_button1_url', array(
@@ -195,6 +206,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'slide2_button2_text', array (
         'default'               => __( 'Learn More', 'athena' ),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'slide2_button2_text', array(
@@ -207,6 +219,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'slide2_button2_url', array (
         'default'               => '',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'slide2_button2_url', array(
@@ -214,9 +227,6 @@ function athena_customize_register( $wp_customize ) {
         'section'               => 'slide2',
         'label'                 => __( 'Button #2 URL', 'athena' ),
     ) );
-    
-    
-
     
     
     // *********************************************
@@ -232,6 +242,27 @@ function athena_customize_register( $wp_customize ) {
         'title'                 => __( 'Icon Callouts', 'athena' ),
         'panel'                 => 'homepage',
     ) );
+
+    $wp_customize->add_section( 'homepage_widget', array (
+        'title'                 => __( 'Homepage Widget', 'athena' ),
+        'panel'                 => 'homepage',
+    ) );
+    
+    // 1st slide
+    $wp_customize->add_setting( 'homepage_widget_background', array (
+        'default'               => get_template_directory_uri() . '/inc/images/widget.jpg',
+        'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control1', array (
+        'label' =>              __( 'Widget Background', 'athena' ),
+        'section'               => 'homepage_widget',
+        'mime_type'             => 'image',
+        'settings'              => 'homepage_widget_background',
+        'description'           => __( 'Select the image file that you would like to use as the background image', 'athena' ),        
+    ) ) );
+    
 
     $wp_customize->add_section( 'homepage_overlay', array (
         'title'                 => __( 'Overlay', 'athena' ),
@@ -252,6 +283,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'overlay_bool', array (
         'default'               => 'on',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
    $wp_customize->add_control( 'overlay_bool', array(
@@ -267,6 +299,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'overlay_icon', array (
         'default'               => 'fa fa-question-circle',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
    $wp_customize->add_control( 'overlay_icon', array(
@@ -281,6 +314,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'callout1_icon', array (
         'default'               => 'fa fa-laptop',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
    $wp_customize->add_control( 'callout1_icon', array(
@@ -293,6 +327,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'callout1_title', array (
         'default'               => 'Responsive',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'callout1_title', array(
@@ -306,6 +341,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'callout1_text', array (
         'default'               => __( 'Athena is a carefully designed and developed theme that you can use to make your site stand out', 'athena'),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'callout1_text', array(
@@ -320,6 +356,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'callout2_icon', array (
         'default'               => 'fa fa-magic',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
    $wp_customize->add_control( 'callout2_icon', array(
@@ -332,6 +369,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'callout2_title', array (
         'default'               => __('Customizable', 'athena'),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'callout2_title', array(
@@ -345,6 +383,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'callout2_text', array (
         'default'               => __('Athena is easy to use and customize without having to touch code', 'athena'),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'callout2_text', array(
@@ -359,6 +398,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'callout3_icon', array (
         'default'               => 'fa fa-shopping-cart',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
    $wp_customize->add_control( 'callout3_icon', array(
@@ -371,6 +411,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'callout3_title', array (
         'default'               => __('WooCommerce', 'athena'),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'callout3_title', array(
@@ -384,6 +425,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'callout3_text', array (
         'default'               => __('Athena supports WooCommerce to build an online shopping site', 'athena'),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'callout3_text', array(
@@ -427,6 +469,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'logo_bool', array (
         'default'               => 'on',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
 
     $wp_customize->add_control( 'logo_bool', array(
@@ -444,6 +487,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'logo', array (
         'default'               => get_template_directory_uri() . '/inc/images/logo.png',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control4', array (
@@ -461,6 +505,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'sidebar_location', array (
         'default'               => 'right',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'sidebar_location', array(
@@ -478,6 +523,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'home_sidebar', array (
         'default'               => 'on',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'home_sidebar', array(
@@ -496,6 +542,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'single_sidebar', array (
         'default'               => 'on',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'single_sidebar', array(
@@ -514,6 +561,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'page_sidebar', array (
         'default'               => 'on',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'page_sidebar', array(
@@ -532,6 +580,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'theme_color', array (
         'default'               => 'green',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'theme_color', array(
@@ -553,6 +602,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'header_font', array (
         'default'               => 'Raleway, sans-serif',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'header_font', array(
@@ -567,6 +617,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'theme_font', array (
         'default'               => 'Raleway, sans-serif',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'theme_font', array(
@@ -581,6 +632,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'menu_font_size', array (
         'default'               => '14px',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'menu_font_size', array(
@@ -594,6 +646,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'theme_font_size', array (
         'default'               => '14px',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'theme_font_size', array(
@@ -622,6 +675,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'footer_background_image', array (
         'default'               => get_template_directory_uri() . '/inc/images/footer.jpg',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
 
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'image_control3', array (
@@ -640,6 +694,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'copyright_text', array (
         'default'               => __( 'Copyright Company Name', 'athena' ) . date( 'Y' ),
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'copyright_text', array(
@@ -657,6 +712,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'facebook_url', array (
         'default'               => '#',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'facebook_url', array(
@@ -669,6 +725,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'gplus_url', array (
         'default'               => '#',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'gplus_url', array(
@@ -681,6 +738,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'instagram_url', array (
         'default'               => '#',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'instagram_url', array(
@@ -693,6 +751,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'linkedin_url', array (
         'default'               => '#',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'linkedin_url', array(
@@ -705,6 +764,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'pinterest_url', array (
         'default'               => '#',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'pinterest_url', array(
@@ -717,6 +777,7 @@ function athena_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'twitter_url', array (
         'default'               => '#',
         'transport'             => 'postMessage',
+        'sanitize_callback'     => 'athena_sanitize'
     ) );
     
     $wp_customize->add_control( 'twitter_url', array(
@@ -819,3 +880,58 @@ function athena_font_sizes(){
     return $font_size_array;
     
 }
+
+   function athena_slider_transition_sanitize($input) {
+      $valid_keys = array(
+        'true' => __('Fade', 'athena'),
+        'false' => __('Slide', 'athena'),
+      );
+      if ( array_key_exists( $input, $valid_keys ) ) {
+         return $input;
+      } else {
+         return '';
+      }
+   }
+   
+   
+   function athena_radio_sanitize_enabledisable($input) {
+      $valid_keys = array(
+        'enable'=>__('Enable', 'athena'),
+        'disable'=>__('Disable', 'athena')
+      );
+      if ( array_key_exists( $input, $valid_keys ) ) {
+         return $input;
+      } else {
+         return '';
+      }
+   }
+   
+   function athena_radio_sanitize_yesno($input) {
+    $valid_keys = array(
+      'yes'=>__('Yes', 'athena'),
+      'no'=>__('No', 'athena')
+      );
+    if ( array_key_exists( $input, $valid_keys ) ) {
+     return $input;
+   } else {
+     return '';
+   }
+ }
+   
+   // checkbox sanitization
+   function athena_checkbox_sanitize($input) {
+      if ( $input == 1 ) {
+         return 1;
+      } else {
+         return '';
+      }
+   }
+    
+   //integer sanitize
+   function athena_integer_sanitize($input){
+        return intval( $input );
+   }
+   
+   function athena_sanitize( $input ) {
+       return $input;
+   }

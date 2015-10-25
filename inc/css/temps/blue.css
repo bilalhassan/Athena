@@ -12,7 +12,7 @@ and open the template in the editor.
 
 
 a,a:visited{
-    color: #5dade2;
+    color: #3498db;
 }
 
 a:hover,
@@ -29,6 +29,14 @@ ul.athena-nav > li.menu-item a:hover{
 
 }
 
+ul.athena-nav > li > ul li.current-menu-item > a{
+    color: #3498db;
+}
+
+ul.athena-nav ul li a:hover{
+    color: #5dade2;
+}
+
 .athena-button.primary,
 button, 
 input[type="button"], 
@@ -37,7 +45,7 @@ input[type="submit"],
 .woocommerce input.button.alt,
 .woocommerce #respond input#submit.alt, 
 .woocommerce a.button.alt{
-    background: #5dade2;
+    background: #3498db;
     color: #fff;
 }
 
@@ -50,16 +58,16 @@ input[type="submit"],
 }
 
 .woocommerce .woocommerce-message{
-    border-top-color: #5dade2;
+    border-top-color: #3498db;
 }
 
 .woocommerce .woocommerce-message:before{
-    color: #5dade2;
+    color: #3498db;
 }
 
 .main-navigation .athena-cart,
 .athena-mobile-cart .athena-cart{
-    background: #5dade2 !important;
+    background: #3498db !important;
     transition: 0.25s all ease-in-out;
     -moz-transition: 0.25s all ease-in-out;
     -webkit-transition: 0.25s all ease-in-out;
@@ -68,12 +76,12 @@ input[type="submit"],
 
 .main-navigation .athena-cart:hover,
 .athena-mobile-cart .athena-cart:hover{
-    background: #5dade2;
+    background: #5dade2 !important;
 }
 
 #athena-featured,
 .woocommerce span.onsale{
-    background: #5dade2;
+    background: #3498db;
     color: #fff;
 }
 #athena-featured .fa{
@@ -89,5 +97,5 @@ input[type="submit"],
 }
 
 #athena-overlay-trigger{
-    border-color: transparent transparent #5dade2 transparent;
+    border-color: transparent transparent #3498db transparent;
 }

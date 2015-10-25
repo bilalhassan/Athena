@@ -53,11 +53,11 @@ function athena_scripts() {
     wp_enqueue_style('athena-animations', get_template_directory_uri() . '/inc/css/animate.css', array(), ATHENA_VERSION);
     wp_enqueue_style('athena-slicknav', get_template_directory_uri() . '/inc/css/slicknav.min.css', array(), ATHENA_VERSION);
     wp_enqueue_style('athena-template', get_template_directory_uri() . '/inc/css/temps/' . esc_attr(get_theme_mod('theme_color', 'green')) . '.css', array(), ATHENA_VERSION);
-//    wp_enqueue_style('athena-wow', get_template_directory_uri() . '/inc/css/wow.min.css', array(), ATHENA_VERSION);
 
     wp_enqueue_script('athena-sticky', get_template_directory_uri() . '/inc/js/sticky.min.js', array('jquery'), ATHENA_VERSION, true);
     wp_enqueue_script('athena-easing', get_template_directory_uri() . '/inc/js/easing.js', array('jquery'), ATHENA_VERSION, true);
     wp_enqueue_script('athena-camera', get_template_directory_uri() . '/inc/js/camera.js', array('jquery'), ATHENA_VERSION, true);
+    wp_enqueue_script('athena-parallax', get_template_directory_uri() . '/inc/js/parallax.min.js', array('jquery'), ATHENA_VERSION, true);
     wp_enqueue_script('athena-carousel', get_template_directory_uri() . '/inc/js/owl.carousel.min.js', array('jquery'), ATHENA_VERSION, true);
     wp_enqueue_script('athena-slicknav', get_template_directory_uri() . '/inc/js/slicknav.min.js', array('jquery'), ATHENA_VERSION, true);
     wp_enqueue_script('athena-wow', get_template_directory_uri() . '/inc/js/wow.js', array('jquery'), ATHENA_VERSION, true);
@@ -91,15 +91,15 @@ function athena_widgets_init() {
         'after_title' => '</h2>',
     ));
 
-    register_sidebar(array(
-        'name' => esc_html__('Left Sidebar', 'athena'),
-        'id' => 'sidebar-left',
-        'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h2 class="widget-title">',
-        'after_title' => '</h2>',
-    ));
+//    register_sidebar(array(
+//        'name' => esc_html__('Left Sidebar', 'athena'),
+//        'id' => 'sidebar-left',
+//        'description' => '',
+//        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+//        'after_widget' => '</aside>',
+//        'before_title' => '<h2 class="widget-title">',
+//        'after_title' => '</h2>',
+//    ));
 
     register_sidebar(array(
         'name' => esc_html__('Shop Sidebar ( WooCommerce )', 'athena'),
@@ -136,7 +136,7 @@ function athena_widgets_init() {
         'name' => esc_html__('Homepage', 'athena'),
         'id' => 'sidebar-homepage',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s col-sm-12">',
         'after_widget' => '</aside>',
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
@@ -308,7 +308,7 @@ function athena_homepage_script() { ?>
 
                 jQuery('#athena-slider').camera({
                     height: height + 'px',
-                    loader: false,
+                    loader: 'bar',
                     overlay: false,
                     fx: 'simpleFade',
                     pagination: false,
@@ -418,14 +418,14 @@ function athena_render_homepage() { ?>
 
     <div class="clear"></div>
 
-    <div id="athena-featured" >
+    <div id="athena-featured">
 
         <div class="col-sm-4 featured-box featured-box1">
 
             <div class="reveal animated fadeInUp reveal">
 
                 <div class="athena-icon">
-                    <span class="<?php echo esc_attr(get_theme_mod('callout1_icon', __('fa fa-desktop', 'athena'))); ?>"></span>
+                    <span class="<?php echo esc_attr(get_theme_mod('callout1_icon', __('fa fa-laptop', 'athena'))); ?>"></span>
                 </div>
 
                 <h3 class="athena-title"><?php echo esc_attr(get_theme_mod('callout1_title', __('Responsive', 'athena'))); ?></h3>
@@ -441,12 +441,12 @@ function athena_render_homepage() { ?>
             <div class="reveal animated fadeInUp delay1">
 
                 <div class="athena-icon">
-                    <span class="<?php echo esc_attr(get_theme_mod('callout2_icon', __('fa fa-black-tie', 'athena'))); ?>"></span>
+                    <span class="<?php echo esc_attr(get_theme_mod('callout2_icon', __('fa fa-magic', 'athena'))); ?>"></span>
                 </div>
 
-                <h3 class="athena-title"><?php echo esc_attr(get_theme_mod('callout2_title', __('Beautiful', 'athena'))); ?></h3>
+                <h3 class="athena-title"><?php echo esc_attr(get_theme_mod('callout2_title', __('Customizable', 'athena'))); ?></h3>
 
-                <p class="athena-desc"><?php echo esc_attr(get_theme_mod('callout2_text', __('Athena is a carefully designed and developed theme that you can use to make your site stand out', 'athena'))); ?></p>
+                <p class="athena-desc"><?php echo esc_attr(get_theme_mod('callout2_text', __('Athena is easy to use and customize without having to touch code', 'athena'))); ?></p>
 
             </div>
             
@@ -457,12 +457,12 @@ function athena_render_homepage() { ?>
             <div class="reveal animated fadeInUp delay2">
             
                 <div class="athena-icon">
-                    <span class="<?php echo esc_attr(get_theme_mod('callout3_icon', __('fa fa-star', 'athena'))); ?>"></span>
+                    <span class="<?php echo esc_attr(get_theme_mod('callout3_icon', __('fa fa-shopping-cart', 'athena'))); ?>"></span>
                 </div>
 
-                <h3 class="athena-title"><?php echo esc_attr(get_theme_mod('callout3_title', __('Excellent', 'athena'))); ?></h3>
+                <h3 class="athena-title"><?php echo esc_attr(get_theme_mod('callout3_title', __('WooCommerce', 'athena'))); ?></h3>
 
-                <p class="athena-desc"><?php echo esc_attr(get_theme_mod('callout3_text', __('Athena is easily customizable, without touching a line of code', 'athena'))); ?></p>
+                <p class="athena-desc"><?php echo esc_attr(get_theme_mod('callout3_text', __('Athena supports WooCommerce to build an online shopping site', 'athena'))); ?></p>
                 
             </div>
         </div>
@@ -471,18 +471,107 @@ function athena_render_homepage() { ?>
     
     <div class="clear"></div>
 
-    <div id="athena-homepage-widget">
-        <div class="row">
-            <?php get_sidebar('homepage'); ?>
-        </div>
-    </div>
     
-    
+    <?php get_sidebar('homepage'); ?>
+
     
     <?php
 }
 
 add_action( 'athena_homepage', 'athena_render_homepage' );
+
+
+function athena_render_footer(){ ?>
+    
+    <div class="athena-footer" class="parallax-window" data-parallax="scroll" data-image-src="<?php echo esc_attr( get_theme_mod('footer_background_image', get_template_directory_uri() . '/inc/images/footer.jpg' ) ); ?>">
+        <div>
+            <div class="row">
+                <?php get_sidebar('footer'); ?>
+            </div>            
+        </div>
+
+        
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="site-info">
+        
+        <div class="row">
+            
+            <div class="athena-copyright">
+                <?php echo esc_attr( get_theme_mod( 'copyright_text', __( 'Copyright Company Name 2015', 'athena' ) ) ); ?>
+            </div>
+            
+            <div id="authica-social">
+                
+                <?php if( get_theme_mod( 'facebook_url', 'http://facebook.com' ) != '' ) : ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'facebook_url', 'http://facebook.com' ) ); ?>" target="_BLANK" class="athena-facebook">
+                    <span class="fa fa-facebook"></span>
+                </a>
+                <?php endif; ?>
+                
+                
+                <?php if( get_theme_mod( 'gplus_url', 'http://gplus.com' ) != '' ) : ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'gplus_url', 'http://gplus.com' ) ); ?>" target="_BLANK" class="athena-gplus">
+                    <span class="fa fa-google-plus"></span>
+                </a>
+                <?php endif; ?>
+                
+                <?php if( get_theme_mod( 'instagram_url', 'http://instagram.com' ) != '' ) : ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'instagram_url', 'http://instagram.com' ) ); ?>" target="_BLANK" class="athena-instagram">
+                    <span class="fa fa-instagram"></span>
+                </a>
+                <?php endif; ?>
+                
+                <?php if( get_theme_mod( 'linkedin_url', 'http://linkedin.com' ) != '' ) : ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'linkedin_url', 'http://linkedin.com' ) ); ?>" target="_BLANK" class="athena-linkedin">
+                    <span class="fa fa-linkedin"></span>
+                </a>
+                <?php endif; ?>
+                
+                
+                <?php if( get_theme_mod( 'pinterest_url', 'http://pinterest.com' ) != '' ) : ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'pinterest_url', 'http://pinterest.com' ) ); ?>" target="_BLANK" class="athena-pinterest">
+                    <span class="fa fa-pinterest"></span>
+                </a>
+                <?php endif; ?>
+                
+                <?php if( get_theme_mod( 'twitter_url', 'http://twitter.com' ) ) : ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'twitter_url', 'http://twitter.com' ) ); ?>" target="_BLANK" class="athena-twitter">
+                    <span class="fa fa-twitter"></span>
+                </a>
+                <?php endif; ?>
+                
+            </div>
+
+            <?php $menu = wp_nav_menu( array ( 
+                'theme_location'    => 'footer', 
+                'menu_id'           => 'footer-menu', 
+                'menu_class'        => 'athena-footer-nav' ,
+
+                ) ); ?>
+            <br>
+
+            <a href="https://smartcatdesign.net" rel="designer" style="display: block !important">
+                <?php _e( 'Design by' , 'athena' ); echo ' Smart' . 'cat'; ?>
+                <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo_mini.png'?>"/>
+            </a>
+            
+            
+        </div>
+        
+        <div class="scroll-top alignright">
+            <span class="fa fa-chevron-up"></span>
+        </div>
+        
+
+        
+    </div><!-- .site-info -->
+    
+    
+<?php }
+add_action( 'athena_footer', 'athena_render_footer' );
 
 
 
@@ -582,3 +671,4 @@ function athena_recent_posts() {
     </div>
 <?php
 }
+

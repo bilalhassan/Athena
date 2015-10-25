@@ -49,9 +49,9 @@ get_header('shop');
 
                         <?php endwhile; // end of the loop.  ?>
                     </div>
-                        <div class="col-sm-3" id="athena-sidebar">
-                            <?php do_action('woocommerce_sidebar'); ?>
-                        </div>
+                     
+                            <?php get_sidebar( 'shop' ); ?>
+                     
                         <?php
                         /**
                          * woocommerce_after_main_content hook

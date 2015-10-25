@@ -94,10 +94,9 @@ get_header('shop');
 
                         <?php endif; ?>
                             </div>
-        <div class="col-sm-3" id="athena-sidebar">
-            <?php do_action('woocommerce_sidebar'); ?>
-        </div>
+                        
                         <?php
+                        get_sidebar( 'shop' );
                         /**
                          * woocommerce_after_main_content hook
                          *

@@ -4,8 +4,8 @@ Contributors: automattic
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 Requires at least: 4.0
-Tested up to: 4.2.2
-Stable tag: 1.0.0
+Tested up to: 4.3.1
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,8 +29,8 @@ Athena includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
-* Initial release
+= 1.0 - October 24 2015 =
+First version of the plugin released
 
 == Credits ==
 
@@ -53,13 +53,8 @@ Athena includes support for Infinite Scroll in Jetpack.
     - License               SIL Open Font & MIT
     - License URL (MIT)     http://opensource.org/licenses/MIT
     - License URL (OFL)     http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
-
-4. Options Framework
-    - URL                   https://github.com/devinsays/options-framework-theme/blob/master/license.txt
-    - License               GPLv2
-    - License URL           http://www.gnu.org/licenses/gpl.html
     
-5. Camera Slider by Pixedelic
+4. Camera Slider by Pixedelic
     - URL                   https://github.com/pixedelic/Camera/blob/master/README.md#copyright
     - License               MIT
     - License URL           http://opensource.org/licenses/MIT
@@ -116,7 +111,14 @@ Athena includes support for Infinite Scroll in Jetpack.
     - License               SIL Open Font
     - License URL           http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
-15. Parallax.js
+16. Parallax.js
     - URL                   https://github.com/pixelcog/parallax.js/
     - License               SIL Open Font
     - License URL           http://www.opensource.org/licenses/mit-license.php
+
+17. Homepage Image  
+    - URL                   https://pixabay.com/en/student-typing-keyboard-text-woman-849825/
+    - License               CC0
+    - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
+    - Photographer          StartupStockPhotos
+

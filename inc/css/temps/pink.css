@@ -8,8 +8,6 @@ and open the template in the editor.
     Author     : Bilal
 */
 
-
-
 a,a:visited{
     color: #e85387;
 }
@@ -24,23 +22,62 @@ ul.athena-nav > li.menu-item.current-menu-item a,
 ul.athena-nav > li.menu-item.current-menu-parent a,
 ul.athena-nav > li.menu-item a:hover{
     
-    border-bottom: 2px solid #e85387;
+    border-bottom: 2px solid #CA4875;
 
+}
+
+ul.athena-nav > li > ul li.current-menu-item > a{
+    color: #e85387;
+}
+
+ul.athena-nav ul li a:hover{
+    color: #CA4875;
 }
 
 .athena-button.primary,
 button, 
 input[type="button"], 
-input[type="submit"]{
+input[type="submit"],
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt{
     background: #e85387;
     color: #fff;
 }
 
-.athena-button.primary:hover{
+.athena-button.primary:hover,
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover{
     background: #CA4875;
 }
 
-#athena-featured{
+.woocommerce .woocommerce-message{
+    border-top-color: #e85387;
+}
+
+.woocommerce .woocommerce-message:before{
+    color: #e85387;
+}
+
+.main-navigation .athena-cart,
+.athena-mobile-cart .athena-cart{
+    background: #e85387 !important;
+    transition: 0.25s all ease-in-out;
+    -moz-transition: 0.25s all ease-in-out;
+    -webkit-transition: 0.25s all ease-in-out;
+    top: -5px;
+}
+
+.main-navigation .athena-cart:hover,
+.athena-mobile-cart .athena-cart:hover{
+    background: #CA4875 !important;
+}
+
+#athena-featured,
+.woocommerce span.onsale{
     background: #e85387;
     color: #fff;
 }
@@ -49,11 +86,11 @@ input[type="submit"]{
 }
 
 #authica-social a:hover{
-    color: #e85387;
+    color: #CA4875;
 }
 
 .scroll-top:hover{
-    background: #e85387;
+    background: #CA4875;
 }
 
 #athena-overlay-trigger{
