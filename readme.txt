@@ -67,6 +67,10 @@ Bug fixes
 Remove Customizer custom CSS
 Update tags
 
+= 1.1.0 =
+updated TGM to latest version
+Bug fix for sidebar on Shop page
+
 
 == Credits ==
 
