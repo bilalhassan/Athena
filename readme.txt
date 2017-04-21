@@ -1,19 +1,17 @@
 === Athena ===
 
-Contributors: automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Contributors: smartcat,automattic
+Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,custom-logo,featured-images,footer-widgets,full-width-template,theme-options,translation-ready,portfolio,e-commerce,entertainment
 
-Requires at least: 4.0
-Tested up to: 4.3.1
-Stable tag: 1.0
+Requires at least: 4.6
+Tested up to: 4.7.4
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called Athena, or underscores.
-
 == Description ==
 
-Hi. I'm a starter theme called Athena, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Athena is a feature-loaded, user-friendly, fully responsive, Parallax modern WordPress theme built with care and SEO in mind. It is a multi-purpose theme with a design that can be used by a business, restaurant, freelancers, photographers, bloggers, musicians and creative agencies. Athena features a full width frontpage slider, animated callouts with over 600 icons to choose from. The blog is an attractive masonry grid. It comes with many color options, left and right sidebars, 6 widget areas, primary and footer menus, mobile responsive menu and links to your social media sites . Athena allows you to fully customize your site without having to work with code. Athena also features a live customizer, allowing you to change settings and preview them live.
 
 == Installation ==
 	
@@ -25,12 +23,50 @@ Hi. I'm a starter theme called Athena, or underscores, if you like. I'm a theme 
 
 = Does this theme support any plugins? =
 
-Athena includes support for Infinite Scroll in Jetpack.
+Athena includes support for Infinite Scroll in Jetpack, Our Team Showcase and WooCommerce.
+
+= How many menu items does Athena support ?
+
+Athena supports an unlimited number of menu items, it has been optimized for top-level menus, sub menus and sub-sub menus.
+As a recommendation, try to maintain the number of top menu items under 8 or 9 items, because if you add more,
+the menu items will drop to a new line and will not look as good as intended.
+
 
 == Changelog ==
 
-= 1.0 - October 24 2015 =
-First version of the plugin released
+= 1.0.0 - October 24 2015 =
+First version of the theme released
+
+= 1.0.1 - January 17th, 2016
+Modifications based on theme review feedback
+
+= 1.0.2 - January 18th, 2016
+
+= 1.0.3 - January 21st, 2016
+Fixed an error in the slide #1 image upload in customizer
+Fixed color issue in dropdown menus in widgets
+
+= 1.0.4 - Minor bug fix
+
+= 1.0.5 - February 8th, 2016
+Updates to theme mod sanitization
+Updating theme info in style.css, readme.txt
+
+= 1.0.6 - February 9th, 2016
+Fix to TGMPA bug resulting from namechange
+
+= 1.0.7 - 
+Added option allowing users to remove the Icon Callouts
+Added option allowing users to add a URL for the Icon Callouts
+Slider buttons now hide when the text is left empty
+
+= 1.0.8 - 
+Bug fixes
+
+= 1.0.9 - 
+Remove Customizer custom CSS
+Update tags
+
 
 == Credits ==
 
@@ -69,8 +105,8 @@ First version of the plugin released
     - License               SIL Open Font
     - License URL           http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
-8. Google Fonts - Lato
-    - URL                   https://www.google.com/fonts/specimen/Lato
+8. Google Fonts
+    - URL                   https://www.google.com/fonts/
     - License               SIL Open Font
     - License URL           http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
@@ -81,10 +117,10 @@ First version of the plugin released
     - Photographer          Unsplash                 
 
 10. Slider Image 2
-    - URL                   http://pixabay.com/en/ipad-samsung-music-play-google-605439/
+    - URL                   https://pixabay.com/en/people-man-model-glasses-516370/
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
-    - Photographer          FirmBee                 
+    - Photographer          hahanriji                 
 
 11. OwlCarousel
     - URL                   https://github.com/OwlFonk/OwlCarousel/blob/master/README.md#license
@@ -113,7 +149,7 @@ First version of the plugin released
 
 16. Parallax.js
     - URL                   https://github.com/pixelcog/parallax.js/
-    - License               SIL Open Font
+    - License               MIT
     - License URL           http://www.opensource.org/licenses/mit-license.php
 
 17. Homepage Image  
@@ -122,3 +158,7 @@ First version of the plugin released
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
     - Photographer          StartupStockPhotos
 
+18. TGM Plugin Activation  
+    - URL                   http://tgmpluginactivation.com/
+    - License               Licensed under GPLv2 or later
+    - License URL           http://www.gnu.org/licenses/gpl.html

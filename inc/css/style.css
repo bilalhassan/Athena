@@ -1,8 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : 24-Sep-2015, 11:46:32 PM
     Author     : bilal
@@ -67,15 +62,7 @@ body.admin-bar{
     margin-top: -85px;
 }
 
-ul{
-    margin: 0;
-    padding-left: 0;
-}
 
-ul li{
-    list-style: none;
-    padding-left: 0;
-}
 .delay1{
     -webkit-animation-delay: 0.1s;
     -moz-animation-delay: 0.1s;
@@ -206,7 +193,8 @@ ul li{
     padding: 0px 10px;
 }
 
-#athena-search{
+#athena-search,
+#athena-contact{
     background: #111111;
     background: rgba( 50, 50, 50, 0.9 );
     position: fixed;
@@ -230,11 +218,15 @@ ul li{
     display: inline-block;
 }
 
-#athena-search .fa.fa-close{
+#athena-search .fa.fa-close,
+#athena-contact .fa.fa-close{
     color: #fff;
     cursor: pointer;
     font-weight: 100;
     font-size: 32px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     
 }
 
@@ -713,6 +705,10 @@ input[type="submit"]{
     display: none;
 }
 
+.site-info a.rel{
+    display: block !important;
+}
+
 /*-- 6. Sidebar --*/
 
 #athena-sidebar{
@@ -985,6 +981,17 @@ input[type="submit"]{
         float: right;
     }
     
+    div.athena-blog-content article h2.entry-title {
+        font-size: 20px;
+    }
+    
+    #athena-logo img {
+        max-height: 50px;
+    }
+
+    #athena-logo {
+        line-height: 50px;
+    }
     
 }
 
