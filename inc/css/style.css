@@ -1002,4 +1002,7 @@ input[type="submit"]{
     
 }
 
-
+/* ----- WooCommerce Updates ----- */
+ul.products mark.count {
+    display: none;
+}
