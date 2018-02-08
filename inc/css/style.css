@@ -1097,3 +1097,18 @@ header#title_bread_wrap .entry-title {
 .woocommerce .quantity .qty {
     min-height: 34px;
 }
+
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price,
+.woocommerce ul.products li.product .price {
+    color: #666;
+}
+
+.woocommerce div.product .woocommerce-product-rating {
+    margin-bottom: 0 !important;
+}
+
+.woocommerce div.product p.price {
+    font-size: 28px;
+    margin-top: 10px;
+}
