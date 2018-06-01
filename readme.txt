@@ -84,6 +84,9 @@ Revamp of all WooCommerce template overrides in use and related styling
 = 1.2.1 - June 1, 2018
 WooCommerce Templates update
 
+= 1.2.2 - June 1, 2018
+Remove deprecated custom header const
+
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
