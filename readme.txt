@@ -1,6 +1,6 @@
 === Athena ===
 
-Contributors: smartcat,automattic
+Contributors: smartcat
 Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,custom-logo,featured-images,footer-widgets,full-width-template,theme-options,translation-ready,portfolio,e-commerce,entertainment
 
 Requires at least: 4.6
